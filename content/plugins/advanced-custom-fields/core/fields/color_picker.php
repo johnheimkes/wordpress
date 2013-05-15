@@ -1,82 +1,63 @@
 <?php
 
-class acf_Color_picker extends acf_Field
+class acf_field_color_picker extends acf_field
 {
-
-	/*--------------------------------------------------------------------------------------
-	*
-	*	Constructor
-	*
-	*	@author Elliot Condon
-	*	@since 1.0.0
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
 	
-	function __construct($parent)
+	/*
+	*  __construct
+	*
+	*  Set name / label needed for actions / filters
+	*
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
+	
+	function __construct()
 	{
-    	parent::__construct($parent);
-    	
-    	$this->name = 'color_picker';
-		$this->title = __("Color Picker",'acf');
+		// vars
+		$this->name = 'color_picker';
+		$this->label = __("Color Picker",'acf');
+		$this->category = __("jQuery",'acf');
 		
-   	}
-   	
+		
+		// do not delete!
+    	parent::__construct();
+    	
+	}
 	
-	/*--------------------------------------------------------------------------------------
-	*
-	*	admin_print_scripts / admin_print_styles
-	*
-	*	@author Elliot Condon
-	*	@since 3.0.0
-	* 
-	*-------------------------------------------------------------------------------------*/
 	
-	function admin_print_scripts()
+	/*
+	*  create_field()
+	*
+	*  Create the HTML interface for your field
+	*
+	*  @param	$field - an array holding all the field's data
+	*
+	*  @type	action
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
+	
+	function create_field( $field )
 	{
-		wp_enqueue_script(array(
-			'farbtastic'
-		));
-	}
-	
-	function admin_print_styles()
-	{
-		wp_enqueue_style(array(
-			'farbtastic'
-		));
-  
+		echo '<input type="text" value="' . $field['value'] . '" id="' . $field['id'] . '" class="acf_color_picker" name="' . $field['name'] . '"  />';
 	}
 	
 	
-	/*--------------------------------------------------------------------------------------
+	/*
+	*  create_options()
 	*
-	*	create_field
+	*  Create extra options for your field. This is rendered when editing a field.
+	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
 	*
-	*	@author Elliot Condon
-	*	@since 2.0.5
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function create_field($field)
-	{		
-		// html
-		echo '<input type="text" value="' . $field['value'] . '" class="acf_color_picker" name="' . $field['name'] . '" id="' . $field['id'] . '" />';
-
-	}
-	
-	
-	/*--------------------------------------------------------------------------------------
+	*  @type	action
+	*  @since	3.6
+	*  @date	23/01/13
 	*
-	*	create_options
-	*
-	*	@author Elliot Condon
-	*	@since 2.0.6
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
+	*  @param	$field	- an array holding all the field's data
+	*/
 	
-	function create_options($key, $field)
+	function create_options( $field )
 	{
 		// vars
 		$defaults = array(
@@ -84,28 +65,30 @@ class acf_Color_picker extends acf_Field
 		);
 		
 		$field = array_merge($defaults, $field);
-
+		$key = $field['name'];
 		
 		?>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Default Value",'acf'); ?></label>
-				<p class="description"><?php _e("eg: #ffffff",'acf'); ?></p>
-			</td>
-			<td>
-				<?php 
-				$this->parent->create_field(array(
-					'type'	=>	'text',
-					'name'	=>	'fields['.$key.'][default_value]',
-					'value'	=>	$field['default_value'],
-				));
-				?>
-			</td>
-		</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Default Value",'acf'); ?></label>
+		<p class="description"><?php _e("eg: #ffffff",'acf'); ?></p>
+	</td>
+	<td>
+		<?php 
+		do_action('acf/create_field', array(
+			'type'	=>	'text',
+			'name'	=>	'fields[' .$key.'][default_value]',
+			'value'	=>	$field['default_value'],
+		));
+		?>
+	</td>
+</tr>
 		<?php
+		
 	}
 	
-	
 }
+
+new acf_field_color_picker();
 
 ?>

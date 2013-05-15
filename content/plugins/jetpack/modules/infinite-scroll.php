@@ -4,6 +4,7 @@
  * Module Description: Automatically pull the next set of posts into view when the reader approaches the bottom of the page.
  * Sort Order: 14
  * First Introduced: 2.0
+ * Requires Connection: No
  */
 
 /**
@@ -45,6 +46,8 @@ class Jetpack_Infinite_Scroll_Extras {
 		add_action( 'after_setup_theme', array( $this, 'action_after_setup_theme' ), 5 );
 
 		add_filter( 'infinite_scroll_js_settings', array( $this, 'filter_infinite_scroll_js_settings' ) );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'action_wp_enqueue_scripts' ) );
 	}
 
 	/**
@@ -166,6 +169,19 @@ class Jetpack_Infinite_Scroll_Extras {
 		$settings['google_analytics'] = (bool) get_option( $this->option_name_google_analytics );
 
 		return $settings;
+	}
+
+	/**
+	 * Load VideoPress scripts if plugin is active.
+	 *
+	 * @global $videopress
+	 * @action wp_enqueue_scripts
+	 * @return null
+	 */
+	public function action_wp_enqueue_scripts() {
+		global $videopress;
+		if ( ! empty( $videopress ) && The_Neverending_Home_Page::archive_supports_infinity() && is_a( $videopress, 'VideoPress' ) && method_exists( $videopress, 'enqueue_scripts' ) )
+			$videopress->enqueue_scripts();
 	}
 }
 Jetpack_Infinite_Scroll_Extras::instance();

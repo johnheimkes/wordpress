@@ -1,11 +1,11 @@
-/* This file was automatically generated on Oct 05 2012 14:17:24 */
+/* This file was automatically generated on Mar 27 2013 13:05:48 */
 
 div#publicize-services-block {
 	display: inline-block;
 	clear: both;
 	margin-bottom: 25px;
 	background-color: #fff;
-	width: 100%;
+	padding: 25px 20px 5px 25px;
 }
 
 /* Add the logos for the Publicize services */
@@ -19,12 +19,11 @@ span.pub-logos {
 	vertical-align: top;
 }
 
-span#facebook { background: url( ../facebook.png ) 50% 25px no-repeat; }
-span#twitter { background: url( ../twitter.png?1 ) 50% 25px no-repeat; }
-span#yahoo { background: url( ../yahoo.png ) 50% 25px no-repeat; }
-span#pb-ms { background: url( ../msn.png ) 50% 25px no-repeat; }
-span#linkedin { background: url( ../linkedin.png ) 50% 25px no-repeat; }
-span#tumblr { background: url( ../tumblr.png ) 50% 25px no-repeat; }
+span#facebook { background: url( ../facebook-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
+span#twitter { background: url( ../twitter-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
+span#yahoo { background: url( ../yahoo-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
+span#linkedin { background: url( ../linkedin-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
+span#tumblr { background: url( ../tumblr-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
 
 a.publicize-profile-link, a.publicize-profile-link:visited {
 	text-decoration: none;
