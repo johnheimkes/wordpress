@@ -48,11 +48,19 @@ class acf_field_image extends acf_field
 	
 	/*
 	*  create_field()
+<<<<<<< HEAD
 	*
 	*  Create the HTML interface for your field
 	*
 	*  @param	$field - an array holding all the field's data
 	*
+=======
+	*
+	*  Create the HTML interface for your field
+	*
+	*  @param	$field - an array holding all the field's data
+	*
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  @type	action
 	*  @since	3.6
 	*  @date	23/01/13
@@ -184,6 +192,7 @@ class acf_field_image extends acf_field
 	*  format_value_for_api()
 	*
 	*  This filter is appied to the $value after it is loaded from the db and before it is passed back to the api functions such as the_field
+<<<<<<< HEAD
 	*
 	*  @type	filter
 	*  @since	3.6
@@ -193,11 +202,23 @@ class acf_field_image extends acf_field
 	*  @param	$post_id - the $post_id from which the value was loaded
 	*  @param	$field	- the field array holding all the field options
 	*
+=======
+	*
+	*  @type	filter
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	$value	- the value which was loaded from the database
+	*  @param	$post_id - the $post_id from which the value was loaded
+	*  @param	$field	- the field array holding all the field options
+	*
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  @return	$value	- the modified value
 	*/
 	
 	function format_value_for_api( $value, $post_id, $field )
 	{
+<<<<<<< HEAD
 		// vars
 		$defaults = array(
 			'save_format'	=>	'url',
@@ -205,6 +226,8 @@ class acf_field_image extends acf_field
 		
 		$field = array_merge($defaults, $field);
 		
+=======
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		
 		// validate
 		if( !$value )
@@ -366,10 +389,61 @@ class acf_field_image extends acf_field
 		}
 		
         return $sizes;
+<<<<<<< HEAD
+=======
 	}
 	
 	
 	/*
+	*  wp_prepare_attachment_for_js
+	*
+	*  @description: This sneaky hook adds the missing sizes to each attachment in the 3.5 uploader. It would be a lot easier to add all the sizes to the 'image_size_names_choose' filter but then it will show up on the normal the_content editor
+	*  @since: 3.5.7
+	*  @created: 13/01/13
+	*/
+	
+	function wp_prepare_attachment_for_js( $response, $attachment, $meta )
+	{
+		// only for image
+		if( $response['type'] != 'image' )
+		{
+			return $response;
+		}
+		
+		
+		// make sure sizes exist. Perhaps they dont?
+		if( !isset($meta['sizes']) )
+		{
+			return $response;
+		}
+		
+		
+		$attachment_url = $response['url'];
+		$base_url = str_replace( wp_basename( $attachment_url ), '', $attachment_url );
+		
+		if( isset($meta['sizes']) && is_array($meta['sizes']) )
+		{
+			foreach( $meta['sizes'] as $k => $v )
+			{
+				if( !isset($response['sizes'][ $k ]) )
+				{
+					$response['sizes'][ $k ] = array(
+						'height'      =>  $v['height'],
+						'width'       =>  $v['width'],
+						'url'         => $base_url .  $v['file'],
+						'orientation' => $v['height'] > $v['width'] ? 'portrait' : 'landscape',
+					);
+				}
+			}
+		}
+
+		return $response;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
+	}
+	
+	
+	/*
+<<<<<<< HEAD
 	*  wp_prepare_attachment_for_js
 	*
 	*  @description: This sneaky hook adds the missing sizes to each attachment in the 3.5 uploader. It would be a lot easier to add all the sizes to the 'image_size_names_choose' filter but then it will show up on the normal the_content editor
@@ -440,6 +514,31 @@ class acf_field_image extends acf_field
 			$value = $value['id'];	
 		}
 		
+=======
+	*  update_value()
+	*
+	*  This filter is appied to the $value before it is updated in the db
+	*
+	*  @type	filter
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	$value - the value which will be saved in the database
+	*  @param	$post_id - the $post_id of which the value will be saved
+	*  @param	$field - the field array holding all the field options
+	*
+	*  @return	$value - the modified value
+	*/
+	
+	function update_value( $value, $post_id, $field )
+	{
+		// array?
+		if( is_array($value) && isset($value['id']) )
+		{
+			$value = $value['id'];	
+		}
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// object?
 		if( is_object($value) && isset($value->ID) )
 		{

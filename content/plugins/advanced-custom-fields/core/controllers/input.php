@@ -28,6 +28,7 @@ class acf_input
 		
 		// save
 		add_action('save_post', array($this, 'save_post'), 10, 1);
+<<<<<<< HEAD
 		
 		
 		// actions
@@ -40,6 +41,13 @@ class acf_input
 		
 		// filters
 		add_filter('_wp_post_revision_fields', array($this, 'wp_post_revision_fields') );
+=======
+		
+		
+		// actions
+		add_action('acf/input/admin_head', array($this, 'input_admin_head'));
+		add_action('acf/input/admin_enqueue_scripts', array($this, 'input_admin_enqueue_scripts'));
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		
 		
 		// ajax acf/update_field_groups
@@ -106,11 +114,19 @@ class acf_input
 		// validate page
 		if( ! $this->validate_page() ){ return; }
 
+<<<<<<< HEAD
 		
 		// scripts
 		do_action('acf/input/admin_enqueue_scripts');
 		
 		
+=======
+		
+		// scripts
+		do_action('acf/input/admin_enqueue_scripts');
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// head
 		add_action('admin_head', array($this,'admin_head'));
 	}
@@ -164,12 +180,22 @@ class acf_input
 		
 		// add user js + css
 		do_action('acf/input/admin_head');
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		
 		// get field groups
 		$acfs = apply_filters('acf/get_field_groups', array());
 		
+<<<<<<< HEAD
 		
+=======
+		// get field groups
+		$acfs = apply_filters('acf/get_field_groups', array());
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		if( $acfs )
 		{
 			foreach( $acfs as $acf )
@@ -202,12 +228,48 @@ class acf_input
 			// foreach($acfs as $acf)
 		}
 		// if($acfs)
+		
+		
+		// Allow 'acf_after_title' metabox position
+		add_action('edit_form_after_title', array($this, 'edit_form_after_title'));
+	}
+	
+	
+	/*
+<<<<<<< HEAD
+	*  meta_box_input
+	*
+=======
+	*  edit_form_after_title
+	*
+	*  This action will allow ACF to render metaboxes after the title
+	*
+	*  @type	action
+	*  @date	17/08/13
+	*
+	*  @param	N/A
+	*  @return	N/A
+	*/
+	
+	function edit_form_after_title()
+	{
+		// globals
+		global $post, $wp_meta_boxes;
+		
+		
+		// render
+		do_meta_boxes( get_current_screen(), 'acf_after_title', $post);
+		
+		
+		// clean up
+		unset( $wp_meta_boxes['post']['acf_after_title'] );
 	}
 	
 	
 	/*
 	*  meta_box_input
 	*
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  @description: 
 	*  @since 1.0.0
 	*  @created: 23/06/12
@@ -305,6 +367,7 @@ class acf_input
 			$html .= '#authordiv, #screen-meta label[for=authordiv-hide] {display: none;} ';
 		}
 		if( in_array('format',$options['hide_on_screen']) )
+<<<<<<< HEAD
 		{
 			$html .= '#formatdiv, #screen-meta label[for=formatdiv-hide] {display: none;} ';
 		}
@@ -318,6 +381,21 @@ class acf_input
 		}
 		if( in_array('categories',$options['hide_on_screen']) )
 		{
+=======
+		{
+			$html .= '#formatdiv, #screen-meta label[for=formatdiv-hide] {display: none;} ';
+		}
+		if( in_array('featured_image',$options['hide_on_screen']) )
+		{
+			$html .= '#postimagediv, #screen-meta label[for=postimagediv-hide] {display: none;} ';
+		}
+		if( in_array('revisions',$options['hide_on_screen']) )
+		{
+			$html .= '#revisionsdiv, #screen-meta label[for=revisionsdiv-hide] {display: none;} ';
+		}
+		if( in_array('categories',$options['hide_on_screen']) )
+		{
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			$html .= '#categorydiv, #screen-meta label[for=categorydiv-hide] {display: none;} ';
 		}
 		if( in_array('tags',$options['hide_on_screen']) )
@@ -391,8 +469,13 @@ class acf_input
 		
 		// load post options
 		$options = array_merge($options, $_POST);
+<<<<<<< HEAD
 		
 		
+=======
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// verify nonce
 		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') )
 		{
@@ -455,6 +538,7 @@ class acf_input
 			return $post_id;
 		}
 		
+<<<<<<< HEAD
 		
 		// update the post (may even be a revision / autosave preview)
 		do_action('acf/save_post', $post_id);
@@ -510,10 +594,45 @@ class acf_input
 			'wp_version'	=>	$wp_version
 		);
 		
+=======
+		
+		// update the post (may even be a revision / autosave preview)
+		do_action('acf/save_post', $post_id);
+        
+	}
+	
+		
+	/*
+	*  input_admin_head
+	*
+	*  action called when rendering the head of an admin screen. Used primarily for passing PHP to JS
+	*
+	*  @type	action
+	*  @date	27/05/13
+	*
+	*  @param	N/A
+	*  @return	N/A
+	*/
+	
+	function input_admin_head()
+	{
+		// global
+		global $wp_version, $post;
+		
+				
+		// vars
+		$toolbars = apply_filters( 'acf/fields/wysiwyg/toolbars', array() );
+		$post_id = 0;
+		if( $post )
+		{
+			$post_id = intval( $post->ID );
+		}
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		
 		// toolbars
 		$t = array();
 		
+<<<<<<< HEAD
 		if( is_array($toolbars) ){ foreach( $toolbars as $label => $rows ){
 			
 			$label = sanitize_title( $label );
@@ -593,75 +712,97 @@ class acf_input
 			'acf-input',
 			'acf-datepicker',	
 		));
-	}
-	
-	
-	/*
-	*  wp_restore_post_revision
-	*
-	*  @description: 
-	*  @since 3.4.4
-	*  @created: 4/09/12
-	*/
-	
-	function wp_restore_post_revision( $parent_id, $revision_id )
-	{
-		global $wpdb;
+=======
+		// l10n
+		$l10n = apply_filters( 'acf/input/admin_l10n', array(
+			'core' => array(
+				'expand_details' => __("Expand Details",'acf'),
+				'collapse_details' => __("Collapse Details",'acf')
+			),
+			'validation' => array(
+				'error' => __("Validation Failed. One or more fields below are required.",'acf')
+			)
+		));
 		
 		
-		// get field from postmeta
-		$rows = $wpdb->get_results( $wpdb->prepare(
-			"SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id = %d AND meta_key NOT LIKE %s", 
-			$revision_id, 
-			'\_%'
-		), ARRAY_A);
+		// options
+		$o = array(
+			'post_id'		=>	$post_id,
+			'nonce'			=>	wp_create_nonce( 'acf_nonce' ),
+			'admin_url'		=>	admin_url(),
+			'ajaxurl'		=>	admin_url( 'admin-ajax.php' ),
+			'wp_version'	=>	$wp_version
+		);
 		
 		
-		if( $rows )
-		{
-			foreach( $rows as $row )
-			{
-				update_post_meta( $parent_id, $row['meta_key'], $row['meta_value'] );
-			}
-		}
+		// toolbars
+		$t = array();
+		
+		if( is_array($toolbars) ){ foreach( $toolbars as $label => $rows ){
 			
+			$label = sanitize_title( $label );
+			$label = str_replace('-', '_', $label);
+			
+			$t[ $label ] = array();
+			
+			if( is_array($rows) ){ foreach( $rows as $k => $v ){
+				
+				$t[ $label ][ 'theme_advanced_buttons' . $k ] = implode(',', $v);
+				
+			}}
+		}}
+		
+			
+		?>
+<script type="text/javascript">
+(function($) {
+
+	// vars
+	acf.post_id = <?php echo is_numeric($post_id) ? $post_id : '"' . $post_id . '"'; ?>;
+	acf.nonce = "<?php echo wp_create_nonce( 'acf_nonce' ); ?>";
+	acf.admin_url = "<?php echo admin_url(); ?>";
+	acf.ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+	acf.wp_version = "<?php echo $wp_version; ?>";
+	
+	
+	// new vars
+	acf.o = <?php echo json_encode( $o ); ?>;
+	acf.l10n = <?php echo json_encode( $l10n ); ?>;
+	acf.fields.wysiwyg.toolbars = <?php echo json_encode( $t ); ?>;
+
+})(jQuery);	
+</script>
+		<?php
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	}
 	
 	
+	
 	/*
-	*  wp_post_revision_fields
+	*  input_admin_enqueue_scripts
 	*
 	*  @description: 
-	*  @since 3.4.4
-	*  @created: 4/09/12
+	*  @since: 3.6
+	*  @created: 30/01/13
 	*/
 	
-	function wp_post_revision_fields( $fields ) {
-		
-		global $post, $wpdb, $revision, $left_revision, $right_revision, $pagenow;
-		
-		
-		if( $pagenow != "revision.php" )
-		{
-			return $fields;
-		}
-		
-		
-		// get field from postmeta
-		$rows = $wpdb->get_results( $wpdb->prepare(
-			"SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id = %d AND meta_key NOT LIKE %s", 
-			$post->ID, 
-			'\_%'
-		), ARRAY_A);
-		
-		
-		if( $rows )
-		{
-			foreach( $rows as $row )
-			{
-				$fields[ $row['meta_key'] ] =  ucwords( str_replace('_', ' ', $row['meta_key']) );
+	function input_admin_enqueue_scripts()
+	{
 
+		// scripts
+		wp_enqueue_script(array(
+			'jquery',
+			'jquery-ui-core',
+			'jquery-ui-tabs',
+			'jquery-ui-sortable',
+			'wp-color-picker',
+			'thickbox',
+			'media-upload',
+			'acf-input',
+			'acf-datepicker',	
+		));
 
+<<<<<<< HEAD
 				// left vs right
 				if( isset($_GET['left']) && isset($_GET['right']) )
 				{
@@ -696,13 +837,29 @@ class acf_input
 				}
 				
 			}
+=======
+		
+		// 3.5 media gallery
+		if( function_exists('wp_enqueue_media') && !did_action( 'wp_enqueue_media' ))
+		{
+			wp_enqueue_media();
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		}
 		
 		
-		return $fields;
-	
+		// styles
+		wp_enqueue_style(array(
+			'thickbox',
+			'wp-color-picker',
+			'acf-global',
+			'acf-input',
+			'acf-datepicker',	
+		));
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			
 }
 

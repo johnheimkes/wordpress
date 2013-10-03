@@ -222,7 +222,11 @@
 
 .acf-image-uploader img {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
 	max-width: 100%;
+=======
+	width: 100%;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	height: auto;
 	display: block;
 	min-width: 30px;
@@ -238,6 +242,15 @@
 
 .acf-image-uploader input.button {
 	width: auto;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	
+	.acf-image-uploader img {
+		width: auto;
+		max-width: 100%;
+	}
+	
 }
 
 
@@ -366,6 +379,7 @@
 .media-modal.acf-expanded .acf-expand-details .is-open { display: block; }
 .media-modal.acf-expanded .acf-expand-details .is-closed { display: none; }
 
+<<<<<<< HEAD
 
 /* Expand / Collapse views */
 .media-modal .media-toolbar,
@@ -394,6 +408,46 @@
 .media-modal .compat-item .field {
 	min-height: 0;
 	margin: 5px 0 0;
+=======
+
+/* Expand / Collapse views */
+.media-modal .media-toolbar,
+.media-modal .attachments,
+.media-modal .media-sidebar {
+	-webkit-transition: all 0.25s ease-out;  /* Safari 3.2+, Chrome */
+       -moz-transition: all 0.25s ease-out;  /* Firefox 4-15 */
+         -o-transition: all 0.25s ease-out;  /* Opera 10.5–12.00 */
+            transition: all 0.25s ease-out;  /* Firefox 16+, Opera 12.50+ */
+}
+
+.media-modal.acf-expanded .media-toolbar { right: 700px; }
+.media-modal.acf-expanded .attachments { right: 700px; }
+.media-modal.acf-expanded .media-sidebar { width: 667px; }
+
+
+/* Sidebar: Collapse */
+.media-modal .compat-item .label {
+	margin: 0;	
+}
+
+.media-modal .media-sidebar .setting span, 
+.media-modal .compat-item label span,
+.media-modal .media-sidebar .setting input, 
+.media-modal .media-sidebar .setting textarea,
+.media-modal .compat-item .field {
+	min-height: 0;
+	margin: 5px 0 0;
+}
+
+.media-modal .media-sidebar .setting span, 
+.media-modal .compat-item label span {
+	padding-top: 7px;	
+}
+
+.media-modal .attachment-display-settings .setting span {
+	margin-top: 0;
+	margin-right: 3%;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 }
 
 
@@ -606,9 +660,117 @@
 }
 
 
+<<<<<<< HEAD
 /*---------------------------------------------------------------------------------------------
 *
 *  Field: Select
+=======
+/*---------------------------------------------------------------------------------------------
+*
+*  Field: Select
+*
+*---------------------------------------------------------------------------------------------*/
+
+#wpcontent select[multiple] {
+	height: auto;
+}
+
+#wpcontent select optgroup {
+	padding: 0 2px
+}
+
+#wpcontent select optgroup option {
+	padding-left: 6px;
+}
+
+ul.checkbox_list {
+	background: transparent !important;
+}
+
+#createuser ul.checkbox_list input {
+    width: auto;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Input Table
+*
+*---------------------------------------------------------------------------------------------*/
+
+table.acf-input-table {
+	border-radius: 0 0 0 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table.acf-input-table > thead { }
+table.acf-input-table > thead > tr > th { 
+	padding: 8px;
+	position: relative;
+	
+	vertical-align: top;
+	border-right: 1px solid #e1e1e1;
+}
+
+table.acf-input-table > tbody {}
+
+table.acf-input-table > tbody > tr {
+	background: #fff;
+}
+
+table.acf-input-table > tbody > tr > td {
+	background: transparent;
+	border: 0 none;
+   
+    border-top: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+     
+    padding: 8px;
+    position: relative;
+}
+
+table.acf-input-table > tbody > tr > td {
+	background: transparent;
+	border: 0 none;
+   
+    border-top: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+     
+    padding: 8px;
+    position: relative;
+}
+
+table.acf-input-table.row_layout > tbody > tr > td {
+	border-top-color: #DFDFDF;
+}
+
+table.acf-input-table > tbody > tr:first-child > td {
+	border-top: 0 none;
+}
+
+table.acf-input-table > tbody > tr > td:last-child {
+	border-right: 0 none;
+}
+
+td.acf_input-wrap {
+	padding: 0 !important;
+}
+
+.sub-field-instructions {
+	color: #999999;
+    display: block;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    
+    font-weight: normal;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*	Field: Relationship
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 *
 *---------------------------------------------------------------------------------------------*/
 
@@ -1050,8 +1212,13 @@ tr.acf-conditional_logic-show {
 .acf-conditional_logic-hide {
 	display: none;
 }
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 /*--------------------------------------------------------------------------
 *
 *	Conditional Logic + Tabs
@@ -1072,6 +1239,7 @@ tr.acf-conditional_logic-show {
 *	Field: Color picker
 *	
 *-------------------------------------------------------------------------*/
+<<<<<<< HEAD
 
 .acf-color_picker {
 	
@@ -1082,6 +1250,18 @@ tr.acf-conditional_logic-show {
 	width: 80px !important;
 }
 
+=======
+
+.acf-color_picker {
+	
+}
+
+.acf-color_picker input[type="text"] {
+	display: inline;
+	width: 80px !important;
+}
+
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 .acf-color_picker .ui-slider-vertical {
 	width: auto;
 	height: auto;

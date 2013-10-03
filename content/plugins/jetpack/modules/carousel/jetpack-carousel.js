@@ -709,11 +709,15 @@ jQuery(document).ready(function($) {
 
 			$('#jp-carousel-comment-post-results').slideUp();
 
+<<<<<<< HEAD
 			// $('<div />').html(sometext).text() is a trick to go to HTML to plain text (including HTML emntities decode, etc)
+=======
+			// $('<div />').text(sometext).html() is a trick to go to HTML to plain text (including HTML entities decode, etc)
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			if ( current.data('caption') ) {
-				if ( $('<div />').html(current.data('caption')).text() == $('<div />').html(current.data('title')).text() )
+				if ( $('<div />').text(current.data('caption')).html() == $('<div />').text(current.data('title')).html() )
 					$('.jp-carousel-titleanddesc-title').fadeOut('fast').empty();
-				if ( $('<div />').html(current.data('caption')).text() == $('<div />').html(current.data('desc')).text() )
+				if ( $('<div />').text(current.data('caption')).html() == $('<div />').text(current.data('desc')).html() )
 					$('.jp-carousel-titleanddesc-desc').fadeOut('fast').empty();
 				caption.html( current.data('caption') ).fadeIn('slow');
 			} else {
@@ -1035,8 +1039,8 @@ jQuery(document).ready(function($) {
 			desc  = gallery.jp_carousel('parseTitleDesc', data.desc)  || '';
 
 			if ( title.length || desc.length ) {
-				// $('<div />').html(sometext).text() is a trick to go to HTML to plain text (including HTML emntities decode, etc)
-				if ( $('<div />').html(title).text() == $('<div />').html(desc).text() )
+				// $('<div />').text(sometext).html() is a trick to go to HTML to plain text (including HTML entities decode, etc)
+				if ( $('<div />').text(title).html() == $('<div />').text(desc).html() )
 					title = '';
 
 				markup  = ( title.length ) ? '<div class="jp-carousel-titleanddesc-title">' + title + '</div>' : '';

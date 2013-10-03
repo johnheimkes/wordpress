@@ -85,12 +85,22 @@ if( empty($groups) )
 								'post'			=>	__("Post",'acf'),
 								'post_category'	=>	__("Post Category",'acf'),
 								'post_format'	=>	__("Post Format",'acf'),
+<<<<<<< HEAD
 								'taxonomy'		=>	__("Post Taxonomy",'acf'),
 							),
 							__("Other",'acf') => array(
 								'ef_taxonomy'	=>	__("Taxonomy Term (Add / Edit)",'acf'),
 								'ef_user'		=>	__("User (Add / Edit)",'acf'),
 								'ef_media'		=>	__("Media Attachment (Add / Edit)",'acf')
+=======
+								'post_status'	=>	__("Post Status",'acf'),
+								'taxonomy'		=>	__("Post Taxonomy",'acf'),
+							),
+							__("Other",'acf') => array(
+								'ef_media'		=>	__("Attachment",'acf'),
+								'ef_taxonomy'	=>	__("Term",'acf'),
+								'ef_user'		=>	__("User",'acf'),
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 							)
 						);
 								

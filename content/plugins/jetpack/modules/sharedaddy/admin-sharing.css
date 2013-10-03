@@ -164,8 +164,13 @@
 
 .preview-google-plus-1 .option-smart-on {
 	background: #FFF url(images/smart-googleplus1.png) no-repeat top left;
+<<<<<<< HEAD
 	background-size: 60px 20px;
 	width: 60px;
+=======
+	background-size: 96px 20px;
+	width: 96px;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	height: 20px;
 }
 
@@ -179,6 +184,8 @@
 .preview-pinterest .option-smart-on {
 	background: #FFF url(images/smart-pinterest.png) no-repeat top left;
 	background-size: 58px 20px;
+<<<<<<< HEAD
+=======
 	width: 58px;
 	height: 20px;
 }
@@ -186,10 +193,21 @@
 .preview-pinterest .option-smart-on {
 	background: #FFF url(images/smart-pinterest.png) no-repeat top left;
 	background-size: 58px 20px;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	width: 58px;
 	height: 20px;
 }
 
+<<<<<<< HEAD
+.preview-pinterest .option-smart-on {
+	background: #FFF url(images/smart-pinterest.png) no-repeat top left;
+	background-size: 58px 20px;
+	width: 58px;
+	height: 20px;
+}
+
+=======
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 .preview-pocket .option-smart-on {
 	background: #FFF url(images/smart-pocket.png) no-repeat top left;
 	background-size: 60px 20px;

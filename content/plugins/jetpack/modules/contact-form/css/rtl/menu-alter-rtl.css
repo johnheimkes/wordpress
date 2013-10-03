@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* This file was automatically generated on Jun 19 2013 15:20:57 */
+=======
+/* This file was automatically generated on Sep 05 2013 19:17:52 */
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 #menu-posts-feedback .wp-menu-image img {
 	display: none;
@@ -14,6 +18,7 @@
 	background: url(../../images/grunion-menu.png) no-repeat 7px 7px !important;
 }
 
+<<<<<<< HEAD
 body.admin-color-mp6 #adminmenu .toplevel_page_feedback div.wp-menu-image img {
 	display: none;
 }
@@ -23,6 +28,13 @@ body.admin-color-mp6 #adminmenu .menu-icon-feedback div.wp-menu-image, body.admi
 }
 
 body.admin-color-mp6 #adminmenu .menu-icon-feedback div.wp-menu-image:before, body.admin-color-mp6 #adminmenu .toplevel_page_feedback div.wp-menu-image:before {
+=======
+body.mp6 #adminmenu .menu-icon-feedback div.wp-menu-image {
+	background: none !important;
+}
+
+body.mp6 #adminmenu .menu-icon-feedback div.wp-menu-image:before {
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	content: '\f175';
 	margin-right: -1px;
 }

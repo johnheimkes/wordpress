@@ -5,6 +5,10 @@
  * Sort Order: 1
  * First Introduced: 2.0
  * Requires Connection: Yes
+<<<<<<< HEAD
+=======
+ * Auto Activate: Yes
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 class Jetpack_Publicize {

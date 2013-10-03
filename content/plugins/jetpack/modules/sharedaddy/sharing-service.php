@@ -460,6 +460,9 @@ add_action( 'template_redirect', 'sharing_process_requests', 9 );
 function sharing_display( $text = '', $echo = false ) {
 	global $post, $wp_current_filter;
 
+	if ( empty( $post ) )
+		return $text;
+
 	if ( is_preview() ) {
 		return $text;
 	}
@@ -620,7 +623,11 @@ function get_base_recaptcha_lang_code() {
 		'tr'    => 'tr'
 	);
 
+<<<<<<< HEAD
 	$blog_lang_code = function_exists( 'get_blog_lang_code' ) ? get_blog_lang_code() : get_bloginfo( 'language' ); 
+=======
+	$blog_lang_code = function_exists( 'get_blog_lang_code' ) ? get_blog_lang_code() : get_bloginfo( 'language' );
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	if( isset( $base_recaptcha_lang_code_mapping[ $blog_lang_code ] ) )
 		return $base_recaptcha_lang_code_mapping[ $blog_lang_code ];
 

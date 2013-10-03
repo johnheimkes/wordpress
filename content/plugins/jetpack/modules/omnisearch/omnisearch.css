@@ -19,7 +19,11 @@ input.omnisearch {
 	width: 100%;
 }
 
+<<<<<<< HEAD
 .admin-color-mp6 input.omnisearch {
+=======
+.mp6 input.omnisearch {
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	line-height: 1.35;
 }
 
@@ -40,7 +44,11 @@ button.omnisearch-submit {
 	bottom: 0;
 }
 
+<<<<<<< HEAD
 .admin-color-mp6 button.omnisearch-submit {
+=======
+.mp6 button.omnisearch-submit {
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	padding: 0.3em 0.5em 0.1em;
 }
 
@@ -113,10 +121,29 @@ button.omnisearch-submit span {
 	width: 15%;
 }
 
+<<<<<<< HEAD
 .comments .column-author {
 	width: 20%;
 }
 
+=======
+.wp-list-table.comments .column-author {
+	width: 20%;
+}
+
+.wp-list-table.media th {
+	white-space: nowrap;
+}
+
+.wp-list-table.media .column-parent {
+	width: 15%;
+}
+
+.wp-list-table.media .column-comments span.vers {
+	display: block;
+}
+
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 .tablenav {
 	height: 0;
 }
@@ -124,3 +151,7 @@ button.omnisearch-submit span {
 .omnisearch-results .tablenav.top {
 	margin: 5px 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

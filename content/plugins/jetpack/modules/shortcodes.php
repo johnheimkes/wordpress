@@ -7,6 +7,10 @@
  * First Introduced: 1.1
  * Major Changes In: 1.2
  * Requires Connection: No
+<<<<<<< HEAD
+=======
+ * Auto Activate: Yes
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 /**

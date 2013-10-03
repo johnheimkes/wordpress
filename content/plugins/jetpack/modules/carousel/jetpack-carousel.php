@@ -240,8 +240,12 @@ class Jetpack_Carousel {
 			if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
 				$likes_blog_id = $blog_id;
 			} else {
+<<<<<<< HEAD
 				$jetpack = Jetpack::init();
 				$likes_blog_id = $jetpack->get_option( 'id' );
+=======
+				$likes_blog_id = Jetpack_Options::get_option( 'id' );
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			}
 
 			$extra_data = array(

@@ -310,12 +310,21 @@ class acf_field_group
 	{
 		// validate page
 		if( ! $this->validate_page() ){ return; }
+<<<<<<< HEAD
 		
 		
 		// settings
 		$this->settings = apply_filters('acf/get_info', 'all');
 		
 		
+=======
+		
+		
+		// settings
+		$this->settings = apply_filters('acf/get_info', 'all');
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// no autosave
 		wp_dequeue_script( 'autosave' );
 		
@@ -701,14 +710,36 @@ class acf_field_group
 								
 				break;
 			
+			case "post_status" :
+				
+				$choices = array(
+					'publish'	=> __( 'Publish' ),
+					'pending'	=> __( 'Pending Review' ),
+					'draft'		=> __( 'Draft' ),
+					'future'	=> __( 'Future' ),
+					'private'	=> __( 'Private' ),
+					'inherit'	=> __( 'Revision' ),
+					'trash'		=> __( 'Trash' )
+				);
+								
+				break;
+			
+<<<<<<< HEAD
+=======
 			case "user_type" :
 				
 				global $wp_roles;
 				
 				$choices = $wp_roles->get_names();
+
+				if( is_multisite() )
+				{
+					$choices['super_admin'] = __('Super Admin');
+				}
 								
 				break;
 			
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			case "taxonomy" :
 				
 				$choices = array();

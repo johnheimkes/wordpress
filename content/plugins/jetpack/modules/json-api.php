@@ -5,6 +5,10 @@
  * Sort Order: 100
  * First Introduced: 1.9
  * Requires Connection: Yes
+<<<<<<< HEAD
+=======
+ * Auto Activate: Public
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 function jetpack_json_api_toggle() {

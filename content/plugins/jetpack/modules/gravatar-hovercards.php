@@ -5,6 +5,10 @@
  * Sort Order: 8
  * First Introduced: 1.1
  * Requires Connection: No
+<<<<<<< HEAD
+=======
+ * Auto Activate: Yes
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 define( 'GROFILES__CACHE_BUSTER', gmdate( 'YM' ) . 'aa' ); // Break CDN cache, increment when gravatar.com/js/gprofiles.js changes

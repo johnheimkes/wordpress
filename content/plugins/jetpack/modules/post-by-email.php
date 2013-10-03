@@ -6,6 +6,10 @@
  * First Introduced: 2.0
  * Sort Order: 4
  * Requires Connection: Yes
+<<<<<<< HEAD
+=======
+ * Auto Activate: Yes
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 add_action( 'jetpack_modules_loaded', array( 'Jetpack_Post_By_Email', 'init' ) );

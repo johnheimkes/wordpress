@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * @package video
  * @category video
@@ -1331,3 +1332,7 @@ $videopress = new VideoPress();
 
 endif;
 ?>
+=======
+// Boom!
+require_once( JETPACK__PLUGIN_DIR . 'modules/videopress/shortcode.php' );
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

@@ -5,6 +5,10 @@
  * Sort Order: 10
  * First Introduced: 1.1
  * Requires Connection: Yes
+<<<<<<< HEAD
+=======
+ * Auto Activate: Yes
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 add_filter( 'get_shortlink', 'wpme_get_shortlink_handler', 1, 4 );
@@ -32,7 +36,7 @@ if ( !function_exists( 'wpme_dec2sixtwo' ) ) {
 function wpme_get_shortlink( $id = 0, $context = 'post', $allow_slugs = true ) {
 	global $wp_query;
 
-	$blog_id = Jetpack::get_option( 'id' );
+	$blog_id = Jetpack_Options::get_option( 'id' );
 
 	if ( 'query' == $context ) {
 		if ( is_singular() ) {

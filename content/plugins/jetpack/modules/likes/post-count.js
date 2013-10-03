@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 var wpPostLikeCount;
 
 (function($) {
 
 	wpPostLikeCount = {
+=======
+var wpPostLikeCount = wpPostLikeCount || {};
+
+(function($) {
+
+	wpPostLikeCount = jQuery.extend( wpPostLikeCount, {
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 		jsonAPIbase: 'https://public-api.wordpress.com/rest/v1',
 		APIqueue:    [],
@@ -47,6 +55,7 @@ var wpPostLikeCount;
 			}
 
 			wpPostLikeCount.request( batchRequest );
+<<<<<<< HEAD
 		},
 
 		request: function( options ) {
@@ -61,9 +70,17 @@ var wpPostLikeCount;
 		}
 
 	};
+=======
+		}
+	} );
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 })(jQuery);
 
 jQuery(document).ready(function($) {
 	wpPostLikeCount.wpPostLikeCount();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

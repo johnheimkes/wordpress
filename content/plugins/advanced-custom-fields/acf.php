@@ -3,7 +3,11 @@
 Plugin Name: Advanced Custom Fields
 Plugin URI: http://www.advancedcustomfields.com/
 Description: Fully customise WordPress edit screens with powerful fields. Boasting a professional interface and a powerfull API, it’s a must have for any web developer working with WordPress. Field types include: Wysiwyg, text, textarea, image, file, select, checkbox, page link, post object, date picker, color picker, repeater, flexible content, gallery and more!
+<<<<<<< HEAD
 Version: 4.2.0
+=======
+Version: 4.2.2
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 License: GPL
@@ -38,6 +42,10 @@ if( is_admin() )
 		include_once('core/controllers/upgrade.php');
 	}
 	
+<<<<<<< HEAD
+=======
+	include_once('core/controllers/revisions.php');
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	include_once('core/controllers/everything_fields.php');	
 }
 
@@ -67,7 +75,11 @@ class Acf
 			'path' => apply_filters('acf/helpers/get_path', __FILE__),
 			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
 			'hook' => basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ ),
+<<<<<<< HEAD
 			'version' => '4.2.0',
+=======
+			'version' => '4.2.2',
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			'upgrade_version' => '3.4.1',
 		);
 		
@@ -284,7 +296,11 @@ class Acf
 			foreach( $value as $k => $v )
 			{
 				// bail early for restricted pieces
+<<<<<<< HEAD
 				if( in_array($k, $restricted) )
+=======
+				if( in_array($k, $restricted, true) )
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 				{
 					continue;
 				}
@@ -318,8 +334,13 @@ class Acf
 				}
 			}
 		}
+<<<<<<< HEAD
 		
 		
+=======
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// return
 		return $value;
 	}
@@ -711,6 +732,11 @@ class Acf
 	function save_post_lock( $post_id )
 	{
 		$GLOBALS['acf_save_lock'] = $post_id;
+<<<<<<< HEAD
+=======
+		
+		return $post_id;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	}
 	
 	
@@ -730,6 +756,11 @@ class Acf
 	function save_post_unlock( $post_id )
 	{
 		$GLOBALS['acf_save_lock'] = false;
+<<<<<<< HEAD
+=======
+		
+		return $post_id;
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	}
 	
 	
@@ -747,7 +778,7 @@ class Acf
 		// load from post
 		if( !isset($_POST['fields']) )
 		{
-			return false;
+			return $post_id;
 		}
 		
 
@@ -769,7 +800,7 @@ class Acf
 		// if($fields)
 		
 		
-		return true;
+		return $post_id;
 	}
 
 	

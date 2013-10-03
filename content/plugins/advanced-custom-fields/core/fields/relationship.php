@@ -18,11 +18,20 @@ class acf_field_relationship extends acf_field
 		$this->label = __("Relationship",'acf');
 		$this->category = __("Relational",'acf');
 		$this->defaults = array(
+<<<<<<< HEAD
 			'post_type'	=>	array('all'),
 			'max' 		=>	'',
 			'taxonomy' 	=>	array('all'),
 			'filters'	=>	array('search'),
 			'result_elements' => array('post_title', 'post_type')
+=======
+			'post_type'			=>	array('all'),
+			'max' 				=>	'',
+			'taxonomy' 			=>	array('all'),
+			'filters'			=>	array('search'),
+			'result_elements' 	=>	array('post_title', 'post_type'),
+			'return_format'		=>	'object'
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		);
 		$this->l10n = array(
 			'max'		=> __("Maximum values reached ( {max} values )",'acf'),
@@ -37,8 +46,13 @@ class acf_field_relationship extends acf_field
 		
 		// do not delete!
     	parent::__construct();
+<<<<<<< HEAD
     	
     	
+=======
+    	
+    	
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
     	// extra
 		add_action('wp_ajax_acf/fields/relationship/query_posts', array($this, 'query_posts'));
 		add_action('wp_ajax_nopriv_acf/fields/relationship/query_posts', array($this, 'query_posts'));
@@ -144,7 +158,11 @@ class acf_field_relationship extends acf_field
 			'paged'						=>	1,
 			'orderby'					=>	'title',
 			'order'						=>	'ASC',
+<<<<<<< HEAD
 			'post_status'				=>	array('publish', 'private', 'draft', 'inherit', 'future'),
+=======
+			'post_status'				=>	'any',
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			'suppress_filters'			=>	false,
 			's'							=>	'',
 			'lang'						=>	false,
@@ -256,12 +274,21 @@ class acf_field_relationship extends acf_field
 		{
 			$field = apply_filters('acf/load_field', array(), $options['field_key'] );
 		}
+<<<<<<< HEAD
 		
 		
 		// get the post from which this field is rendered on
 		$the_post = get_post( $options['post_id'] );
 		
 		
+=======
+		
+		
+		// get the post from which this field is rendered on
+		$the_post = get_post( $options['post_id'] );
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// filters
 		$options = apply_filters('acf/fields/relationship/query', $options, $field, $the_post);
 		$options = apply_filters('acf/fields/relationship/query/name=' . $field['name'], $options, $field, $the_post );
@@ -390,8 +417,13 @@ class acf_field_relationship extends acf_field
 			'taxonomy' => implode(',', $field['taxonomy']),
 			'field_key' => $field['key']
 		);
+<<<<<<< HEAD
 		
 		
+=======
+		
+		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// Lang
 		if( defined('ICL_LANGUAGE_CODE') )
 		{
@@ -419,6 +451,7 @@ class acf_field_relationship extends acf_field
 		<table class="widefat">
 			<thead>
 				<?php if(in_array( 'search', $field['filters']) ): ?>
+<<<<<<< HEAD
 				<tr>
 					<th>
 						<input class="relationship_search" placeholder="<?php _e("Search...",'acf'); ?>" type="text" id="relationship_<?php echo $field['name']; ?>" />
@@ -463,6 +496,52 @@ class acf_field_relationship extends acf_field
 					</th>
 				</tr>
 				<?php endif; ?>
+=======
+				<tr>
+					<th>
+						<input class="relationship_search" placeholder="<?php _e("Search...",'acf'); ?>" type="text" id="relationship_<?php echo $field['name']; ?>" />
+					</th>
+				</tr>
+				<?php endif; ?>
+				<?php if(in_array( 'post_type', $field['filters']) ): ?>
+				<tr>
+					<th>
+						<?php 
+						
+						// vars
+						$choices = array(
+							'all' => __("Filter by post type",'acf')
+						);
+						
+						
+						if( in_array('all', $field['post_type']) )
+						{
+							$post_types = apply_filters( 'acf/get_post_types', array() );
+							$choices = array_merge( $choices, $post_types);
+						}
+						else
+						{
+							foreach( $field['post_type'] as $post_type )
+							{
+								$choices[ $post_type ] = $post_type;
+							}
+						}
+						
+						
+						// create field
+						do_action('acf/create_field', array(
+							'type'	=>	'select',
+							'name'	=>	'',
+							'class'	=>	'select-post_type',
+							'value'	=>	'',
+							'choices' => $choices,
+						));
+						
+						?>
+					</th>
+				</tr>
+				<?php endif; ?>
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			</thead>
 		</table>
 		<ul class="bl relationship_list">
@@ -565,6 +644,29 @@ class acf_field_relationship extends acf_field
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
+<<<<<<< HEAD
+=======
+		<label><?php _e("Return Format",'acf'); ?></label>
+		<p><?php _e("Specify the returned value on front end",'acf') ?></p>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+			'type'		=>	'radio',
+			'name'		=>	'fields['.$key.'][return_format]',
+			'value'		=>	$field['return_format'],
+			'layout'	=>	'horizontal',
+			'choices'	=> array(
+				'object'	=>	__("Post Objects",'acf'),
+				'id'		=>	__("Post IDs",'acf')
+			)
+		));
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		<label for=""><?php _e("Post Type",'acf'); ?></label>
 	</td>
 	<td>
@@ -690,6 +792,8 @@ class acf_field_relationship extends acf_field
 	
 	function format_value( $value, $post_id, $field )
 	{
+<<<<<<< HEAD
+=======
 		// empty?
 		if( !$value )
 		{
@@ -698,51 +802,28 @@ class acf_field_relationship extends acf_field
 		
 		
 		// Pre 3.3.3, the value is a string coma seperated
-		if( !is_array($value) )
+		if( is_string($value) )
 		{
 			$value = explode(',', $value);
 		}
 		
 		
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// empty?
-		if( empty($value) )
+		if( !is_array($value) || empty($value) )
 		{
 			return $value;
 		}
 		
 		
-		// find posts (DISTINCT POSTS)
-		$posts = get_posts(array(
-			'numberposts' => -1,
-			'post__in' => $value,
-			'post_type'	=>	apply_filters('acf/get_post_types', array()),
-			'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
-		));
-
-		
-		$ordered_posts = array();
-		foreach( $posts as $p )
-		{
-			// create array to hold value data
-			$ordered_posts[ $p->ID ] = $p;
-		}
+		// convert to integers
+		$value = array_map('intval', $value);
 		
 		
-		// override value array with attachments
-		foreach( $value as $k => $v)
-		{
-			// check that post exists (my have been trashed)
-			if( !isset($ordered_posts[ $v ]) )
-			{
-				unset( $value[ $k ] );
-			}
-			else
-			{
-				$value[ $k ] = $ordered_posts[ $v ];
-			}
-		}
+		// convert into post objects
+		$value = $this->get_posts( $value );
 		
-				
+		
 		// return value
 		return $value;	
 	}
@@ -766,11 +847,139 @@ class acf_field_relationship extends acf_field
 	
 	function format_value_for_api( $value, $post_id, $field )
 	{
+		// empty?
+		if( !$value )
+		{
+			return $value;
+		}
+		
+		
+		// Pre 3.3.3, the value is a string coma seperated
+		if( is_string($value) )
+		{
+			$value = explode(',', $value);
+		}
+		
+		
+		// empty?
+		if( !is_array($value) || empty($value) )
+		{
+			return $value;
+		}
+		
+		
+		// convert to integers
+		$value = array_map('intval', $value);
+		
+		
+		// return format
+		if( $field['return_format'] == 'object' )
+		{
+			$value = $this->get_posts( $value );	
+		}
+		
+		
+		// return
+		return $value;
+		
+	}
+	
+	
+	/*
+	*  get_posts
+	*
+	*  This function will take an array of post_id's ($value) and return an array of post_objects
+	*
+	*  @type	function
+	*  @date	7/08/13
+	*
+	*  @param	$post_ids (array) the array of post ID's
+	*  @return	(array) an array of post objects
+	*/
+	
+	function get_posts( $post_ids )
+	{
+		// validate
+		if( empty($post_ids) )
+		{
+			return $post_ids;
+		}
+		
+		
+		// vars
+		$r = array();
+		
+		
+		// find posts (DISTINCT POSTS)
+		$posts = get_posts(array(
+<<<<<<< HEAD
+			'numberposts' => -1,
+			'post__in' => $value,
+			'post_type'	=>	apply_filters('acf/get_post_types', array()),
+			'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
+=======
+			'numberposts'	=>	-1,
+			'post__in'		=>	$post_ids,
+			'post_type'		=>	apply_filters('acf/get_post_types', array()),
+			'post_status'	=>	'any',
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
+		));
+
+		
+		$ordered_posts = array();
+		foreach( $posts as $p )
+		{
+			// create array to hold value data
+			$ordered_posts[ $p->ID ] = $p;
+		}
+		
+		
+		// override value array with attachments
+		foreach( $post_ids as $k => $v)
+		{
+			// check that post exists (my have been trashed)
+			if( !isset($ordered_posts[ $v ]) )
+			{
+				unset( $value[ $k ] );
+			}
+			else
+			{
+				$r[] = $ordered_posts[ $v ];
+			}
+		}
+		
+		
+		// return
+		return $r;
+	}
+	
+	
+	/*
+<<<<<<< HEAD
+	*  format_value_for_api()
+	*
+	*  This filter is appied to the $value after it is loaded from the db and before it is passed back to the api functions such as the_field
+	*
+	*  @type	filter
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	$value	- the value which was loaded from the database
+	*  @param	$post_id - the $post_id from which the value was loaded
+	*  @param	$field	- the field array holding all the field options
+	*
+	*  @return	$value	- the modified value
+	*/
+	
+	function format_value_for_api( $value, $post_id, $field )
+	{
 		return $this->format_value( $value, $post_id, $field );
 	}
 	
 	
 	/*
+=======
+>>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  update_value()
 	*
 	*  This filter is appied to the $value before it is updated in the db
