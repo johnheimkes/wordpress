@@ -12,19 +12,11 @@
 	background: url(../images/grunion-menu.png) no-repeat 7px 7px !important;
 }
 
-<<<<<<< HEAD
-body.admin-color-mp6 #adminmenu .menu-icon-feedback div.wp-menu-image {
-	background: none !important;
-}
-
-body.admin-color-mp6 #adminmenu .menu-icon-feedback div.wp-menu-image:before {
-=======
 body.mp6 #adminmenu .menu-icon-feedback div.wp-menu-image {
 	background: none !important;
 }
 
 body.mp6 #adminmenu .menu-icon-feedback div.wp-menu-image:before {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	content: '\f175';
 	margin-left: -1px;
 }

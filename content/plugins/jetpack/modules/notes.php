@@ -5,10 +5,7 @@
  * Sort Order: 1
  * First Introduced: 1.9
  * Requires Connection: Yes
-<<<<<<< HEAD
-=======
  * Auto Activate: Yes
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 if ( !defined( 'JETPACK_NOTES__CACHE_BUSTER' ) ) define( 'JETPACK_NOTES__CACHE_BUSTER', JETPACK__VERSION . '-' . gmdate( 'oW' ) );

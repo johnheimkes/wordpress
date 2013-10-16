@@ -5,11 +5,7 @@
  * Plugin URI: http://wordpress.org/extend/plugins/jetpack/
  * Description: Bring the power of the WordPress.com cloud to your self-hosted WordPress. Jetpack enables you to connect your blog to a WordPress.com account to use the powerful features normally only available to WordPress.com users.
  * Author: Automattic
-<<<<<<< HEAD
- * Version: 2.3.4
-=======
  * Version: 2.5
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  * Author URI: http://jetpack.me
  * License: GPL2+
  * Text Domain: jetpack
@@ -21,11 +17,7 @@ define( 'JETPACK__API_VERSION', 1 );
 define( 'JETPACK__MINIMUM_WP_VERSION', '3.5' );
 defined( 'JETPACK_CLIENT__AUTH_LOCATION' ) or define( 'JETPACK_CLIENT__AUTH_LOCATION', 'header' );
 defined( 'JETPACK_CLIENT__HTTPS' ) or define( 'JETPACK_CLIENT__HTTPS', 'AUTO' );
-<<<<<<< HEAD
-define( 'JETPACK__VERSION', '2.3.4' );
-=======
 define( 'JETPACK__VERSION', '2.5' );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 define( 'JETPACK__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 defined( 'JETPACK__GLOTPRESS_LOCALES_PATH' ) or define( 'JETPACK__GLOTPRESS_LOCALES_PATH', JETPACK__PLUGIN_DIR . 'locales.php' );
 
@@ -57,11 +49,8 @@ require_once( JETPACK__PLUGIN_DIR . 'class.photon.php'                );
 require_once( JETPACK__PLUGIN_DIR . 'functions.photon.php'            );
 require_once( JETPACK__PLUGIN_DIR . 'functions.compat.php'            );
 require_once( JETPACK__PLUGIN_DIR . 'functions.gallery.php'           );
-<<<<<<< HEAD
-=======
 require_once( JETPACK__PLUGIN_DIR . 'functions.twitter-cards.php'     );
 require_once( JETPACK__PLUGIN_DIR . 'require-lib.php'                 ); 
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 register_activation_hook( __FILE__, array( 'Jetpack', 'plugin_activation' ) );
 register_deactivation_hook( __FILE__, array( 'Jetpack', 'plugin_deactivation' ) );
@@ -70,8 +59,6 @@ add_action( 'init', array( 'Jetpack', 'init' ) );
 add_action( 'plugins_loaded', array( 'Jetpack', 'load_modules' ), 100 );
 add_filter( 'jetpack_static_url', array( 'Jetpack', 'staticize_subdomain' ) );
 
-<<<<<<< HEAD
-=======
 add_filter( 'jetpack_open_graph_tags', 'change_twitter_site_param' );
 
 function change_twitter_site_param( $og_tags ) {
@@ -90,14 +77,8 @@ if ( Jetpack::init()->is_module_active( 'photon' ) ) {
 	remove_filter( 'jetpack_photon_url', 'jetpack_photon_url', 10, 3 );
 }
 
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 /*
 if ( is_admin() && ! Jetpack::check_identity_crisis() ) {
 	Jetpack_Sync::sync_options( __FILE__, 'db_version', 'jetpack_active_modules', 'active_plugins' );
 }
 */
-<<<<<<< HEAD
-
-Jetpack_Sync::sync_options( __FILE__, 'widget_twitter' );
-=======
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

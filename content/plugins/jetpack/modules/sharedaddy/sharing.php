@@ -166,10 +166,7 @@ class Sharing_Admin {
 
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>
 
-<<<<<<< HEAD
-=======
 		<div class="share_manage_options">
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	  	<h3><?php _e( 'Sharing Buttons', 'jetpack' ) ?></h3>
 	  	<p><?php _e( 'Add sharing buttons to your blog and allow your visitors to share posts with their friends.', 'jetpack' ) ?></p>
 
@@ -406,11 +403,7 @@ class Sharing_Admin {
 			<input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce( 'sharing-new_service' );?>" />
 	  	</form>
 	   </div>
-<<<<<<< HEAD
-
-=======
 	   </div>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 	   <?php endif; ?>
 

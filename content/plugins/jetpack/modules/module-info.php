@@ -777,32 +777,6 @@ function jetpack_likes_more_link() {
 add_action( 'jetpack_learn_more_button_likes', 'jetpack_likes_more_link' );
 // Likes: STOP
 
-<<<<<<< HEAD
-// Debug: START
-function jetpack_debug_more_info() { ?>
-
-	<h4><?php esc_html_e( 'Debug' , 'jetpack' ); ?></h4>
-
-	<p><?php esc_html_e( "A debugging platform for the Jetpack plugin. Find out why Jetpack isn't working for you and submit a help request direct from your Dashboard.", 'jetpack' ); ?></p>
-	<?php if ( Jetpack::is_module_active( 'debug' ) ) : ?>
-		<p><a href="<?php echo admin_url( 'admin.php?page=jetpack-debugger' ); ?>"><?php esc_html_e( "Click here to start debugging.", 'jetpack' ); ?></a></p>
-
-	<?php endif; ?>
-<?php
-}
-
-function jetpack_debug_more_link() {
-	echo '<a class="button-secondary more-info-link" href="http://jetpack.me/support/debug/">' . __( 'Learn More', 'jetpack' ) . '</a>';
-}
-
-add_action( 'jetpack_module_more_info_debug', 'jetpack_debug_more_info' );
-add_action( 'jetpack_module_more_info_connected_debug', 'jetpack_debug_more_info' );
-add_action( 'jetpack_learn_more_button_debug', 'jetpack_debug_more_link' );
-// Debug: STOP
-
-// Omnisearch: START
-function jetpack_omnisearch_more_info() { ?>
-=======
 // Google+ Profile: START
 function jetpack_gplus_authorship_more_info() { ?>
 
@@ -832,7 +806,6 @@ add_action( 'jetpack_learn_more_button_gplus-authorship', 'jetpack_gplus_authors
 // Omnisearch: START
 function jetpack_omnisearch_more_info() {
 	?>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 	<h4><?php esc_html_e( 'Omnisearch' , 'jetpack' ); ?></h4>
 
@@ -844,11 +817,7 @@ function jetpack_omnisearch_more_info() {
 		<?php echo Jetpack_Omnisearch::get_omnisearch_form(); ?>
 	<?php endif; ?>
 
-<<<<<<< HEAD
-<?php
-=======
 	<?php
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 }
 
 function jetpack_omnisearch_more_link() {
@@ -858,8 +827,6 @@ function jetpack_omnisearch_more_link() {
 add_action( 'jetpack_module_more_info_omnisearch',  'jetpack_omnisearch_more_info' );
 add_action( 'jetpack_learn_more_button_omnisearch', 'jetpack_omnisearch_more_link' );
 // Omnisearch: STOP
-<<<<<<< HEAD
-=======
 
 // Widget Visibility: START
 function jetpack_widget_visibility_more_info() { ?>
@@ -913,4 +880,3 @@ function jetpack_videopress_more_link() {
 }
 add_action( 'jetpack_learn_more_button_videopress', 'jetpack_videopress_more_link' );
 // VideoPress: STOP
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

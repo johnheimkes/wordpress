@@ -111,11 +111,7 @@ class Publicize_UI {
   				$doc_link = "http://en.support.wordpress.com/publicize/";
   			?>
 
-<<<<<<< HEAD
-	  		<p>&rarr; <a href="<?php echo esc_url( $doc_link ); ?>"><?php esc_html_e( 'More information on using Publicize.', 'jetpack' ); ?></a></p>
-=======
 	  		<p>&rarr; <a href="<?php echo esc_url( $doc_link ); ?>" target="_blank"><?php esc_html_e( 'More information on using Publicize.', 'jetpack' ); ?></a></p>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 	  		<div id="publicize-services-block">
 		  		<?php
@@ -169,11 +165,7 @@ class Publicize_UI {
 												<small>(<?php esc_html_e( 'Shared', 'jetpack' ); ?>)</small>
 
 												<?php if ( current_user_can( $this->publicize->GLOBAL_CAP ) ) : ?>
-<<<<<<< HEAD
-													<a class="pub-disconnect-button" title="<?php esc_html_e( 'Disconnect', 'jetpack' ); ?>" href="<?php echo esc_url( $disconnect_url ); ?>">×</a>
-=======
 													<a class="pub-disconnect-button" title="<?php esc_html_e( 'Disconnect', 'jetpack' ); ?>" href="<?php echo esc_url( $disconnect_url ); ?>" target="_top">×</a>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 												<?php endif; ?>
 
 											<?php else : ?>

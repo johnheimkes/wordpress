@@ -5,20 +5,13 @@
  * Sort Order: 3
  * First Introduced: 1.2
  * Requires Connection: Yes
-<<<<<<< HEAD
-=======
  * Auto Activate: Yes
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 add_action( 'jetpack_modules_loaded', 'jetpack_subscriptions_load' );
 
-<<<<<<< HEAD
-Jetpack_Sync::sync_options( __FILE__,
-=======
 Jetpack_Sync::sync_options(
 	__FILE__,
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	'home',
 	'blogname',
 	'siteurl',
@@ -178,11 +171,7 @@ class Jetpack_Subscriptions {
 
 		add_settings_field(
 			'invitation',
-<<<<<<< HEAD
-			__( 'Blog follow email text' , 'jetpack' ),
-=======
 			__( 'Blog follow email text', 'jetpack' ),
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			array( $this, 'setting_invitation' ),
 			'reading',
 			'email_settings'
@@ -575,15 +564,8 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 
 		$source                 = 'widget';
 		$instance            	= wp_parse_args( (array) $instance, $this->defaults() );
-<<<<<<< HEAD
-		$title               	= isset( $instance['title'] )               ? stripslashes( $instance['title'] )               : '';
 		$subscribe_text      	= isset( $instance['subscribe_text'] )      ? stripslashes( $instance['subscribe_text'] )      : '';
 		$subscribe_button    	= isset( $instance['subscribe_button'] )    ? stripslashes( $instance['subscribe_button'] )    : '';
-		$subscribe_logged_in 	= isset( $instance['subscribe_logged_in'] ) ? stripslashes( $instance['subscribe_logged_in'] ) : '';
-=======
-		$subscribe_text      	= isset( $instance['subscribe_text'] )      ? stripslashes( $instance['subscribe_text'] )      : '';
-		$subscribe_button    	= isset( $instance['subscribe_button'] )    ? stripslashes( $instance['subscribe_button'] )    : '';
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		$show_subscribers_total = (bool) $instance['show_subscribers_total'];
 		$subscribers_total      = $this->fetch_subscriber_count();
 		$widget_id              = esc_attr( !empty( $args['widget_id'] ) ? esc_attr( $args['widget_id'] ) : mt_rand( 450, 550 ) );
@@ -624,11 +606,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		endif;
 
 		// Display a subscribe form ?>
-<<<<<<< HEAD
-		<form action="" method="post" accept-charset="utf-8" id="subscribe-blog-<?php echo !empty( $args['widget_id'] ) ? esc_attr( $args['widget_id'] ) : mt_rand( 450, 550 ); ?>">
-=======
 		<form action="" method="post" accept-charset="utf-8" id="subscribe-blog-<?php echo $widget_id; ?>">
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			<?php
 			if ( ! isset ( $_GET['subscribe'] ) ) {
 				?><p><?php echo $subscribe_text ?></p><?php
@@ -701,19 +679,11 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-<<<<<<< HEAD
-		$instance['title']               	= wp_kses( stripslashes( $new_instance['title'] ), array() );
-		$instance['subscribe_text']      	= wp_filter_post_kses( stripslashes( $new_instance['subscribe_text'] ) );
-		$instance['subscribe_logged_in'] 	= wp_filter_post_kses( stripslashes( $new_instance['subscribe_logged_in'] ) );
-		$instance['subscribe_button']    	= wp_kses( stripslashes( $new_instance['subscribe_button'] ), array() );
-		$instance['show_subscribers_total'] = isset( $new_instance['show_subscribers_total'] ) && $new_instance['show_subscribers_total'];
-=======
 		$instance['title']					= wp_kses( stripslashes( $new_instance['title'] ), array() );
 		$instance['subscribe_text']			= wp_filter_post_kses( stripslashes( $new_instance['subscribe_text'] ) );
 		$instance['subscribe_logged_in']	= wp_filter_post_kses( stripslashes( $new_instance['subscribe_logged_in'] ) );
 		$instance['subscribe_button']		= wp_kses( stripslashes( $new_instance['subscribe_button'] ), array() );
 		$instance['show_subscribers_total']	= isset( $new_instance['show_subscribers_total'] ) && $new_instance['show_subscribers_total'];
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 		return $instance;
 	}
@@ -740,10 +710,6 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 
 		if ( 'failed' == $subs_fetch['status'] ) {
 			printf( '<div class="error inline"><p>' . __( '%s: %s', 'jetpack' ) . '</p></div>', esc_html( $subs_fetch['code'] ), esc_html( $subs_fetch['message'] ) );
-<<<<<<< HEAD
-
-=======
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		}
 		$subscribers_total = number_format_i18n( $subs_fetch['value'] );
 

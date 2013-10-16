@@ -444,11 +444,7 @@ class Jetpack_Photon {
 		) );
 
 		// Bail if scheme isn't http or port is set that isn't port 80
-<<<<<<< HEAD
-		if ( 'http' != $url_info['scheme'] || ! in_array( $url_info['port'], array( 80, null ) ) )
-=======
 		if ( ( 'http' != $url_info['scheme'] || ! in_array( $url_info['port'], array( 80, null ) ) ) && apply_filters( 'jetpack_photon_reject_https', true ) )
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			return false;
 
 		// Bail if no host is found

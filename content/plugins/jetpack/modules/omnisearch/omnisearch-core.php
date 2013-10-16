@@ -27,14 +27,11 @@ class Jetpack_Omnisearch {
 		require_once( dirname(__FILE__) . '/omnisearch-comments.php' );
 		new Jetpack_Omnisearch_Comments;
 
-<<<<<<< HEAD
-=======
 		if ( current_user_can( 'upload_files' ) ) {
 			require_once( dirname(__FILE__) . '/omnisearch-media.php' );
 			new Jetpack_Omnisearch_Media;
 		}
 
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		if ( current_user_can( 'install_plugins' ) ) {
 			require_once( dirname(__FILE__) . '/omnisearch-plugins.php' );
 			new Jetpack_Omnisearch_Plugins;

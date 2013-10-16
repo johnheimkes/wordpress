@@ -30,29 +30,17 @@
  */
 
 /* Force the menu not to be sticky, so we can color the arrow. */
-<<<<<<< HEAD
-.toplevel_page_jetpack.admin-color-mp6.sticky-menu #adminmenuwrap,
-body[class*=" jetpack_page_jetpack_"].admin-color-mp6.sticky-menu #adminmenuwrap {
-=======
 .toplevel_page_jetpack.mp6.sticky-menu #adminmenuwrap,
 body[class*=" jetpack_page_jetpack_"].mp6.sticky-menu #adminmenuwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	position: relative;
 	z-index: auto;
 	top: 0;
 }
 
-<<<<<<< HEAD
-.toplevel_page_jetpack.admin-color-mp6 ul#adminmenu a.wp-has-current-submenu:after,
-.toplevel_page_jetpack.admin-color-mp6 ul#adminmenu > li.current > a.current:after,
-body[class*=" jetpack_page_jetpack_"].admin-color-mp6 ul#adminmenu a.wp-has-current-submenu:after,
-body[class*=" jetpack_page_jetpack_"].admin-color-mp6 ul#adminmenu > li.current > a.current:after {
-=======
 .toplevel_page_jetpack.mp6 ul#adminmenu a.wp-has-current-submenu:after,
 .toplevel_page_jetpack.mp6 ul#adminmenu > li.current > a.current:after,
 body[class*=" jetpack_page_jetpack_"].mp6 ul#adminmenu a.wp-has-current-submenu:after,
 body[class*=" jetpack_page_jetpack_"].mp6 ul#adminmenu > li.current > a.current:after {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	border-right-color:#8fad4b;
 }
 
@@ -61,13 +49,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-disconnected #wpwrap {
 	background: url(images/header-clouds.png) -150px -60px repeat-x;
 }
 
-<<<<<<< HEAD
-.toplevel_page_jetpack.jetpack-disconnected.admin-color-mp6 #wpwrap,
-body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.admin-color-mp6 #wpwrap {
-=======
 .toplevel_page_jetpack.jetpack-disconnected.mp6 #wpwrap,
 body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.mp6 #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	background-position: -143px -60px;
 }
 
@@ -76,13 +59,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.folded #wpwrap {
 	background-position: -263px -60px;
 }
 
-<<<<<<< HEAD
-.toplevel_page_jetpack.jetpack-disconnected.admin-color-mp6.folded #wpwrap,
-body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.admin-color-mp6.folded #wpwrap {
-=======
 .toplevel_page_jetpack.jetpack-disconnected.mp6.folded #wpwrap,
 body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.mp6.folded #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	background-position: -257px -60px;
 }
 
@@ -91,13 +69,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected #wpwrap {
 	background: url(images/header-clouds-small.png) 45px 0 repeat-x;
 }
 
-<<<<<<< HEAD
-.toplevel_page_jetpack.jetpack-connected.admin-color-mp6 #wpwrap,
-body[class*=" jetpack_page_jetpack_"].jetpack-connected.admin-color-mp6 #wpwrap {
-=======
 .toplevel_page_jetpack.jetpack-connected.mp6 #wpwrap,
 body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6 #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	background-position: 52px 0;
 }
 
@@ -106,13 +79,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected.folded #wpwrap {
 	background-position: -68px 0;
 }
 
-<<<<<<< HEAD
-.toplevel_page_jetpack.jetpack-connected.admin-color-mp6.folded #wpwrap,
-body[class*=" jetpack_page_jetpack_"].jetpack-connected.admin-color-mp6.folded #wpwrap {
-=======
 .toplevel_page_jetpack.jetpack-connected.mp6.folded #wpwrap,
 body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.folded #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	background-position: -62px 0;
 }
 
@@ -123,13 +91,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.folded #wpwrap {
 		background-position: -263px -60px;
 	}
 
-<<<<<<< HEAD
-	.toplevel_page_jetpack.jetpack-disconnected.admin-color-mp6.auto-fold #wpwrap,
-	body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.admin-color-mp6.auto-fold #wpwrap {
-=======
 	.toplevel_page_jetpack.jetpack-disconnected.mp6.auto-fold #wpwrap,
 	body[class*=" jetpack_page_jetpack_"].jetpack-disconnected.mp6.auto-fold #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		background-position: -257px -60px;
 	}
 
@@ -138,13 +101,8 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.folded #wpwrap {
 		background-position: -68px 0;
 	}
 
-<<<<<<< HEAD
-	.toplevel_page_jetpack.jetpack-connected.admin-color-mp6.auto-fold #wpwrap,
-	body[class*=" jetpack_page_jetpack_"].jetpack-connected.admin-color-mp6.auto-fold #wpwrap {
-=======
 	.toplevel_page_jetpack.jetpack-connected.mp6.auto-fold #wpwrap,
 	body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.auto-fold #wpwrap {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		background-position: -62px 0;
 	}
 
@@ -242,7 +200,6 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.folded #wpwrap {
 	#jp-header #jp-clouds .jp-disconnect a {
 		background-image: url(images/status-light-2x.png);
 		background-size: 25px 57px;
-<<<<<<< HEAD
 	}
 
 	#jp-header #jp-clouds .jp-disconnect a:hover {
@@ -250,15 +207,6 @@ body[class*=" jetpack_page_jetpack_"].jetpack-connected.mp6.folded #wpwrap {
 		background-size: 25px 57px;
 	}
 
-=======
-	}
-
-	#jp-header #jp-clouds .jp-disconnect a:hover {
-		background-image: url(images/status-light-2x.png);
-		background-size: 25px 57px;
-	}
-
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 }
 
 #jp-header h3 {
@@ -719,11 +667,7 @@ p.jp-help {
 	border-bottom-left-radius: 3px;
 	background-repeat: no-repeat;
 	background-image: url(images/module-icons-sprite.png);
-<<<<<<< HEAD
-	background-size: 2705px 50px; /* remember to update this every time a new module is added! */
-=======
 	background-size: 2956px 50px; /* remember to update this every time a new module is added! */
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 }
 
 @media only screen and (-moz-min-device-pixel-ratio: 1.5),
@@ -764,133 +708,6 @@ p.jp-help {
 #gravatar-hovercards.jetpack-module div.module-image {
 	background-position: -410px 5px;
 }
-<<<<<<< HEAD
-
-#contact-form.jetpack-module div.module-image {
-	background-position: -1107px 5px;
-}
-
-#shortlinks.jetpack-module div.module-image {
-	background-position: -108px 5px;
-}
-
-#shortcodes.jetpack-module div.module-image {
-	background-position: -608px 5px;
-}
-
-#latex.jetpack-module div.module-image {
-	background-position: -208px 5px;
-}
-
-#widgets.jetpack-module div.module-image {
-	background-position: -5px 5px;
-}
-
-#enhanced-distribution.jetpack-module div.module-image {
-	background-position: -808px 5px;
-}
-
-#carousel.jetpack-module div.module-image {
-	background-position: -1325px 5px;
-}
-
-#custom-css.jetpack-module div.module-image {
-	background-position: -1459px 5px;
-}
-
-#minileven.jetpack-module div.module-image {
-	background-position: -1570px 5px;
-}
-
-#notes.jetpack-module div.module-image {
-	background-position: -1806px 5px;
-}
-
-#json-api.jetpack-module div.module-image {
-	background-position: -1689px 5px;
-}
-
-#mobile-push.jetpack-module div.module-image {
-	background-position: -1925px 5px;
-}
-
-#publicize.jetpack-module div.module-image {
-	background-position: -2136px 5px;
-}
-
-#post-by-email.jetpack-module div.module-image {
-	background-position: -2025px 5px;
-}
-
-#infinite-scroll.jetpack-module div.module-image {
-	background-position: -2230px 5px;
-}
-
-#photon.jetpack-module div.module-image {
-	background-position: -2320px 5px;
-}
-
-#tiled-gallery.jetpack-module div.module-image {
-	background-position: -2400px 5px;
-}
-
-#likes.jetpack-module div.module-image {
-	background-position: -2471px 5px;
-}
-
-#debug.jetpack-module div.module-image {
-	background-position: -2550px 5px;
-}
-
-#omnisearch.jetpack-module div.module-image {
-	background-position: -2625px 5px;
-}
-
-.jetpack-module div.module-image p {
-	background-color: #b4d278;
-	color: #fff;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	clear: both;
-	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
-	border-bottom-left-radius: 2px;
-}
-
-.jetpack-new-module div.module-image p {
-	background-color: #f5bd4d;
-}
-
-.jetpack-updated-module div.module-image p {
-	background-color: #6aafcf;
-}
-
-.jetpack-new-module:hover div.module-image p {
-	background-color: #b4d278;
-}
-
-.jetpack-updated-module:hover div.module-image p {
-	background-color: #b4d278;
-}
-
-.jetpack-new-module:hover div.module-image span.module-image-free,
-.jetpack-updated-module:hover div.module-image span.module-image-free {
-	display: inline !important;
-}
-
-.jetpack-new-module:hover div.module-image span.module-image-badge,
-.jetpack-updated-module:hover div.module-image span.module-image-badge {
-	display: none;
-}
-
-.jetpack-toggle {
-	float: right;
-	padding: 2px 4px 4px;
-}
-
-=======
 
 #contact-form.jetpack-module div.module-image {
 	background-position: -1107px 5px;
@@ -1028,7 +845,6 @@ p.jp-help {
 	padding: 2px 4px 4px;
 }
 
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 .jetpack-toggle a {
 	text-decoration: none;
 	font-weight: bold;

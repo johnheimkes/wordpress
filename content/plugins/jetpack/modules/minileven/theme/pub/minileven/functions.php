@@ -184,13 +184,5 @@ function minileven_get_background() {
 /**
  * If the user has set a static front page, show all posts on the front page, instead of a static page.
  */
-<<<<<<< HEAD
-require( get_template_directory() . '/inc/custom-header.php' );
-
-/**
- * If the user has set a static front page, show all posts on the front page, instead of a static page.
- */
-=======
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 if ( '1' == get_option( 'wp_mobile_static_front_page' ) )
 	add_filter( 'pre_option_page_on_front', '__return_zero' );

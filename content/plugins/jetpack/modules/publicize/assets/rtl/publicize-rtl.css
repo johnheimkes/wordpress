@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/* This file was automatically generated on Jun 24 2013 19:39:49 */
-=======
 /* This file was automatically generated on Sep 07 2013 23:01:10 */
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 div#publicize-services-block {
 	display: inline-block;
@@ -23,19 +19,12 @@ span.pub-logos {
 	vertical-align: top;
 }
 
-<<<<<<< HEAD
-span#facebook { background: url( ../facebook-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
-span#twitter { background: url( ../twitter-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
-span#linkedin { background: url( ../linkedin-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
-span#tumblr { background: url( ../tumblr-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
-=======
 span#facebook { background: url( ../facebook-logo.png ) 50% 19px no-repeat; background-size: 125px 41px; }
 span#twitter { background: url( ../twitter-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
 span#linkedin { background: url( ../linkedin-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
 span#tumblr { background: url( ../tumblr-logo.png ) 50% 19px no-repeat; background-size: 125px 47px; }
 span#path { background: url( ../path-logo.png ) 50% 19px no-repeat; background-size: 85px 32px; }
 span#google_plus { background: url( ../gplus.png ) 50% 19px no-repeat; background-size: 125px; }
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 a.publicize-profile-link, a.publicize-profile-link:visited {
 	text-decoration: none;

@@ -6,10 +6,7 @@
  * First Introduced: 1.4
  * Sort Order: 2
  * Requires Connection: Yes
-<<<<<<< HEAD
-=======
  * Auto Activate: No
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 require dirname( __FILE__ ) . '/comments/comments.php';

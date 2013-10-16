@@ -709,11 +709,7 @@ jQuery(document).ready(function($) {
 
 			$('#jp-carousel-comment-post-results').slideUp();
 
-<<<<<<< HEAD
-			// $('<div />').html(sometext).text() is a trick to go to HTML to plain text (including HTML emntities decode, etc)
-=======
 			// $('<div />').text(sometext).html() is a trick to go to HTML to plain text (including HTML entities decode, etc)
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			if ( current.data('caption') ) {
 				if ( $('<div />').text(current.data('caption')).html() == $('<div />').text(current.data('title')).html() )
 					$('.jp-carousel-titleanddesc-title').fadeOut('fast').empty();

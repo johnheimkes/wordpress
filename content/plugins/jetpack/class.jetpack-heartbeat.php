@@ -73,11 +73,7 @@ class Jetpack_Heartbeat {
 
 		$jetpack = Jetpack::init();
 
-<<<<<<< HEAD
-		$jetpack->stat( 'active-modules', implode( ',', $this->jetpack->get_active_modules() ) );
-=======
 		$jetpack->stat( 'active-modules', implode( ',', $jetpack->get_active_modules() )       );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		$jetpack->stat( 'active',         JETPACK__VERSION                                     );
 		$jetpack->stat( 'wp-version',     get_bloginfo( 'version' )                            );
 		$jetpack->stat( 'php-version',    PHP_VERSION                                          );
@@ -88,10 +84,7 @@ class Jetpack_Heartbeat {
 		$jetpack->stat( 'qty-pages',      wp_count_posts( 'page' )->publish                    );
 		$jetpack->stat( 'qty-comments',   wp_count_comments()->approved                        );
 		$jetpack->stat( 'is-multisite',   is_multisite() ? 'multisite' : 'singlesite'          );
-<<<<<<< HEAD
-=======
 		$jetpack->stat( 'identitycrisis', Jetpack::check_identity_crisis( 1 ) ? 'yes' : 'no'   );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 		// Only check a few plugins, to see if they're currently active.
 		$plugins_to_check = array(
@@ -116,22 +109,14 @@ class Jetpack_Heartbeat {
 	public function add_cron_intervals( $schedules ) {
 		$schedules['jetpack_weekly'] = array(
 		    'interval' => WEEK_IN_SECONDS,
-<<<<<<< HEAD
-		    'display' => __('Jetpack weekly')
-=======
 		    'display' => __( 'Jetpack weekly', 'jetpack' ),
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		);
 		return $schedules;
 	}
 
 	public function deactivate() {
 		$timestamp = wp_next_scheduled( $this->cron_name );
-<<<<<<< HEAD
-		wp_unschedule_event($timestamp, $this->cron_name );
-=======
 		wp_unschedule_event( $timestamp, $this->cron_name );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	}
 
 }

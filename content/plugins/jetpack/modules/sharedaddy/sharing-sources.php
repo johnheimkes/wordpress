@@ -867,20 +867,6 @@ class Share_GooglePlus1 extends Sharing_Source {
 
 		if ( $this->smart ) { ?>
 			<script type="text/javascript">
-<<<<<<< HEAD
-				function sharing_plusone( obj ) {
-					jQuery.ajax( {
-						url: '<?php echo get_permalink( $post->ID ) . '?share=google-plus-1'; ?>',
-						type: 'POST',
-						data: obj
-					} );
-				}
-				jQuery( document.body ).on( 'post-load', function() {
-					gapi.plusone.go();
-				});
-			</script>
-			<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script> <?php
-=======
 			  (function() {
 			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
 			    po.src = 'https://apis.google.com/js/plusone.js';
@@ -888,7 +874,6 @@ class Share_GooglePlus1 extends Sharing_Source {
 			  })();
 			</script>
 			<?php
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		} else {
 			$this->js_dialog( 'google-plus-1', array( 'width' => 480, 'height' => 550 ) );
 		}

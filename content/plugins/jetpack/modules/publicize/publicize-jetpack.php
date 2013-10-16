@@ -11,19 +11,13 @@ class Publicize extends Publicize_Base {
 		add_action( 'wp_ajax_publicize_facebook_options_page', array( $this, 'options_page_facebook' ) );
 		add_action( 'wp_ajax_publicize_twitter_options_page', array( $this, 'options_page_twitter' ) );
 		add_action( 'wp_ajax_publicize_linkedin_options_page', array( $this, 'options_page_linkedin' ) );
-<<<<<<< HEAD
-=======
 		add_action( 'wp_ajax_publicize_path_options_page', array( $this, 'options_page_path' ) );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 		add_action( 'wp_ajax_publicize_tumblr_options_save', array( $this, 'options_save_tumblr' ) );
 		add_action( 'wp_ajax_publicize_facebook_options_save', array( $this, 'options_save_facebook' ) );
 		add_action( 'wp_ajax_publicize_twitter_options_save', array( $this, 'options_save_twitter' ) );
 		add_action( 'wp_ajax_publicize_linkedin_options_save', array( $this, 'options_save_linkedin' ) );
-<<<<<<< HEAD
-=======
 		add_action( 'wp_ajax_publicize_path_options_save', array( $this, 'options_save_path' ) );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 		add_action( 'load-settings_page_sharing', array( $this, 'force_user_connection' ) );
 		
@@ -299,10 +293,7 @@ class Publicize extends Publicize_Base {
 				'twitter'  => array(),
 				'linkedin' => array(),
 				'tumblr'   => array(),
-<<<<<<< HEAD
-=======
 				'path'     => array(),
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		);
 
 		if ( 'all' == $filter ) {
@@ -580,17 +571,11 @@ class Publicize extends Publicize_Base {
 
 	function options_page_twitter() { Publicize_UI::options_page_other( 'twitter' ); }
 	function options_page_linkedin() { Publicize_UI::options_page_other( 'linkedin' ); }
-<<<<<<< HEAD
-
-	function options_save_twitter() { $this->options_save_other( 'twitter' ); }
-	function options_save_linkedin() { $this->options_save_other( 'linkedin' ); }
-=======
 	function options_page_path() { Publicize_UI::options_page_other( 'path' ); }
 
 	function options_save_twitter() { $this->options_save_other( 'twitter' ); }
 	function options_save_linkedin() { $this->options_save_other( 'linkedin' ); }
 	function options_save_path() { $this->options_save_other( 'path' ); }
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 	function options_save_other( $service_name ) {
 		// Nonce check

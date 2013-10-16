@@ -1,17 +1,9 @@
 === Jetpack by WordPress.com ===
-<<<<<<< HEAD
-Contributors: automattic, alternatekev, andy, apeatling, azaozz, barry, beaulebens, blobaugh, cfinke, chellycat, danielbachhuber, daniloercoli, designsimply, eoigal, ethitter, gibrown, georgestephanis, hew, hugobaeta, iammattthomas, jblz, jeherve, jkudish, Joen, johnjamesjacoby, jshreve, lancewillett, martinremy, matt, matveb, mdawaffe, migueluy, nickmomrik, pento, stephdau, tmoorewp, Viper007Bond, westi, yoavf
-Tags: WordPress.com, statistics, stats, views, tweets, twitter, widget, gravatar, hovercards, profile, equations, latex, math, maths, youtube, shortcode, archives, audio, blip, bliptv, dailymotion, digg, flickr, googlevideo, google, googlemaps, kyte, kytetv, livevideo, redlasso, rockyou, rss, scribd, slide, slideshare, soundcloud, vimeo, shortlinks, wp.me, subscriptions, notifications, notes, json, api, rest, mosaic, gallery, slideshow
-Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 2.3.3
-=======
 Contributors: automattic, alternatekev, andy, apeatling, azaozz, barry, beaulebens, blobaugh, cfinke, chellycat, danielbachhuber, daniloercoli, designsimply, eoigal, ethitter, gibrown, georgestephanis, hew, hugobaeta, iammattthomas, jblz, jeherve, jkudish, Joen, johnjamesjacoby, jshreve, lancewillett, martinremy, matt, matveb, mcsf, mdawaffe, migueluy, nickmomrik, pento, stephdau, tmoorewp, Viper007Bond, westi, yoavf
 Tags: WordPress.com, statistics, stats, views, tweets, twitter, widget, gravatar, hovercards, profile, equations, latex, math, maths, youtube, shortcode, archives, audio, blip, bliptv, dailymotion, digg, flickr, googlevideo, google, googlemaps, kyte, kytetv, livevideo, redlasso, rockyou, rss, scribd, slide, slideshare, soundcloud, vimeo, shortlinks, wp.me, subscriptions, notifications, notes, json, api, rest, mosaic, gallery, slideshow
 Requires at least: 3.5
 Tested up to: 3.6
 Stable tag: 2.5
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 Supercharge your WordPress site with powerful features previously only available to WordPress.com users.
 
@@ -70,12 +62,6 @@ Once you've installed Jetpack, your stats will be available via the "Site Stats"
 
 = How do I contribute to Jetpack? =
 
-<<<<<<< HEAD
-Easy! There are a couple of ways (more coming soon):
-
-* Give us a hand answering questions in our [support forum](http://wordpress.org/support/plugin/jetpack)
-* Report bugs, with reproduction steps, or post patches on our [Trac](http://plugins.trac.wordpress.org/newticket?component=jetpack)
-=======
 Easy! There are opportunities for developers at all levels to contribute:
 
 * Join our Beta Test group
@@ -83,7 +69,6 @@ Easy! There are opportunities for developers at all levels to contribute:
 * Report bugs, with reproduction steps, or post patches on our [Trac](http://plugins.trac.wordpress.org/newticket?component=jetpack)
 
 Learn more (and get detailed instructions) in our [contribute guide](http://jetpack.me/contribute/).
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 == Screenshots ==
 
@@ -98,8 +83,6 @@ Learn more (and get detailed instructions) in our [contribute guide](http://jetp
 
 == Changelog ==
 
-<<<<<<< HEAD
-=======
 = 2.5 =
 * Enhancement: Connect your Google+ profile and WordPress site to prove authorship of posts. 
 * Enhancement: Improved sharing buttons display.
@@ -169,7 +152,6 @@ Learn more (and get detailed instructions) in our [contribute guide](http://jetp
 = 2.3.5 =
 * Enhancement: Added Path support to Publicize.
 
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 = 2.3.4 =
 * Bug Fix: Correct when output occurs with CSV export for feedback.
 * Bug Fix: Tidy up the Heartbeat API.
@@ -313,11 +295,7 @@ Learn more (and get detailed instructions) in our [contribute guide](http://jetp
 * Bug Fix: Shortcodes - Slideshow: RTL styling update
 * Bug Fix: Tiled Galleries - Fix IE8 display bug where it doesn't honor inline CSS for width on images
 * Bug Fix: Tiled Galleries - Remove depreacted hover call, use mouseenter mouseleave instead
-<<<<<<< HEAD
-* Enhancement: Twitter Timeline Widget: New JavaScript based widget. Old one will discontinue May 7th. 
-=======
 * Enhancement: Twitter Timeline Widget: New JavaScript based widget. Old one will discontinue May 7th.
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 
 = 2.2.2 =
 * Enhancement: Mobile Theme: Add controls for custom CSS.

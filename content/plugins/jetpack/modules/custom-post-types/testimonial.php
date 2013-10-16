@@ -14,11 +14,7 @@ class Jetpack_Testimonial {
 
 	var $version = '0.1';
 
-<<<<<<< HEAD
-	function init() {
-=======
 	static function init() {
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		static $instance = false;
 
 		if ( ! $instance )
@@ -132,11 +128,7 @@ class Jetpack_Testimonial {
 			8  => sprintf( __( 'Testimonial submitted. <a target="_blank" href="%s">Preview testimonial</a>', 'jetpack'), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post->ID ) ) ) ),
 			9  => sprintf( __( 'Testimonial scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview testimonial</a>', 'jetpack' ),
 			// translators: Publish box date format, see http://php.net/date
-<<<<<<< HEAD
-			date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post->ID) ) ),
-=======
 			date_i18n( __( 'M j, Y @ G:i', 'jetpack' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post->ID) ) ),
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			10 => sprintf( __( 'Testimonial draft updated. <a target="_blank" href="%s">Preview testimonial</a>', 'jetpack' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post->ID ) ) ) ),
 		);
 
@@ -291,8 +283,4 @@ function jetpack_testimonial_custom_control_classes() {
 	}
 }
 
-<<<<<<< HEAD
 add_action( 'init', array( 'Jetpack_Testimonial', 'init' ) );
-=======
-add_action( 'init', array( 'Jetpack_Testimonial', 'init' ) );
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536

@@ -5,10 +5,7 @@
  * Sort Order: 10
  * First Introduced: 1.1
  * Requires Connection: Yes
-<<<<<<< HEAD
-=======
  * Auto Activate: Yes
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
  */
 
 add_filter( 'get_shortlink', 'wpme_get_shortlink_handler', 1, 4 );

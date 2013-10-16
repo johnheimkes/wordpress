@@ -359,11 +359,7 @@ class Grunion_Contact_Form_Plugin {
 				<?php wp_nonce_field( 'feedback_export','feedback_export_nonce' ); ?>
 
 				<input name="action" value="feedback_export" type="hidden">
-<<<<<<< HEAD
-				<label for="post"><? _e( 'Select feedback to download', 'jetpack' ) ?></label>
-=======
 				<label for="post"><?php _e( 'Select feedback to download', 'jetpack' ) ?></label>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 				<select name="post">
 					<option value="all"><?php esc_html_e( 'All posts', 'jetpack' ) ?></option>
 					<?php echo $this->get_feedbacks_as_options() ?>
