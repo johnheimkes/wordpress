@@ -217,13 +217,50 @@ class acf_field_functions
 			// update_option -> http://core.trac.wordpress.org/browser/tags/3.5.1/wp-includes/option.php#L0: line 215 (does not use stripslashes_deep)
 			$value = stripslashes_deep($value);
 			
-			update_option( $post_id . '_' . $field['name'], $value );
-			update_option( '_' . $post_id . '_' . $field['name'], $field['key'] );
+			$this->update_option( $post_id . '_' . $field['name'], $value );
+			$this->update_option( '_' . $post_id . '_' . $field['name'], $field['key'] );
 		}
 		
 		
 		// update the cache
 		wp_cache_set( 'load_value/post_id=' . $post_id . '/name=' . $field['name'], $value, 'acf' );
+		
+	}
+	
+	
+	/*
+	*  update_option
+	*
+	*  This function is a wrapper for the WP update_option but provides logic for a 'no' autoload
+	*
+	*  @type	function
+	*  @date	4/01/2014
+	*  @since	5.0.0
+	*
+	*  @param	$option (string)
+	*  @param	$value (mixed)
+	*  @return	(boolean)
+	*/
+	
+	function update_option( $option = '', $value = false, $autoload = 'no' ) {
+		
+		// vars
+		$deprecated = '';
+		$return = false;
+		
+		
+		if( get_option($option) !== false )
+		{
+		    $return = update_option( $option, $value );
+		}
+		else
+		{
+			$return = add_option( $option, $value, $deprecated, $autoload );
+		}
+		
+		
+		// return
+		return $return;
 		
 	}
 	
@@ -331,21 +368,12 @@ class acf_field_functions
 					$field = $row['meta_value'];
 					$field = maybe_unserialize( $field );
 					$field = maybe_unserialize( $field ); // run again for WPML
-<<<<<<< HEAD
-				}
-				
-				
-				// add field_group ID
-				$field['field_group'] = $row['post_id'];
-				
-=======
 					
 					
 					// add field_group ID
 					$field['field_group'] = $row['post_id'];
 				}
 				
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			}
 		}
 		
@@ -391,6 +419,7 @@ class acf_field_functions
 			'key' => '',
 			'label' => '',
 			'name' => '',
+			'_name' => '',
 			'type' => 'text',
 			'order_no' => 1,
 			'instructions' => '',
@@ -431,6 +460,20 @@ class acf_field_functions
 			$id = str_replace(']', '', $id);
 			
 			$field['id'] = 'acf-field-' . $id;
+		}
+		
+		
+		// _name
+		if( !$field['_name'] )
+		{
+			$field['_name'] = $field['name'];
+		}
+		
+		
+		// clean up conditional logic keys
+		if( !empty($field['conditional_logic']['rules']) )
+		{
+			$field['conditional_logic']['rules'] = array_values($field['conditional_logic']['rules']);
 		}
 		
 		

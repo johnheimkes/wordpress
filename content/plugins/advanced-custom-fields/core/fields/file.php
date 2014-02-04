@@ -80,13 +80,9 @@ class acf_field_file extends acf_field
 				$o['title']	= $file->post_title;
 				$o['size'] = size_format(filesize( get_attached_file( $file->ID ) ));
 				$o['url'] = wp_get_attachment_url( $file->ID );
-<<<<<<< HEAD
-				$o['name'] = end(explode('/', $o['url']));				
-=======
 				
 				$explode = explode('/', $o['url']);
 				$o['name'] = end( $explode );				
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			}
 		}
 		
@@ -104,31 +100,8 @@ class acf_field_file extends acf_field
 						<li><a href="#" class="acf-button-edit ir">Edit</a></li>
 					</ul>
 				</div>
-<<<<<<< HEAD
 			</li>
 			<li>
-				<p>
-					<strong class="acf-file-title"><?php echo $o['title']; ?></strong>
-				</p>
-				<p>
-					<strong>Name:</strong>
-					<a class="acf-file-name" href="<?php echo $o['url']; ?>" target="_blank"><?php echo $o['name']; ?></a>
-				</p>
-				<p>
-					<strong>Size:</strong>
-					<span class="acf-file-size"><?php echo $o['size']; ?></span>
-				</p>
-				
-=======
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
-			</li>
-		</ul>
-	</div>
-	<div class="no-file">
-		<ul class="hl clearfix">
-			<li>
-<<<<<<< HEAD
-=======
 				<p>
 					<strong class="acf-file-title"><?php echo $o['title']; ?></strong>
 				</p>
@@ -147,7 +120,6 @@ class acf_field_file extends acf_field
 	<div class="no-file">
 		<ul class="hl clearfix">
 			<li>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 				<span><?php _e('No File Selected','acf'); ?></span>. <a href="#" class="button add-file"><?php _e('Add File','acf'); ?></a>
 			</li>
 		</ul>
@@ -159,17 +131,10 @@ class acf_field_file extends acf_field
 	
 	/*
 	*  create_options()
-<<<<<<< HEAD
 	*
 	*  Create extra options for your field. This is rendered when editing a field.
 	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
 	*
-=======
-	*
-	*  Create extra options for your field. This is rendered when editing a field.
-	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-	*
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  @type	action
 	*  @since	3.6
 	*  @date	23/01/13
@@ -281,6 +246,7 @@ class acf_field_file extends acf_field
 				'title' => $attachment->post_title,
 				'caption' => $attachment->post_excerpt,
 				'description' => $attachment->post_content,
+				'mime_type'	=> $attachment->post_mime_type,
 				'url' => wp_get_attachment_url( $attachment->ID ),
 			);
 		}

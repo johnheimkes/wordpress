@@ -18,20 +18,12 @@ class acf_field_relationship extends acf_field
 		$this->label = __("Relationship",'acf');
 		$this->category = __("Relational",'acf');
 		$this->defaults = array(
-<<<<<<< HEAD
-			'post_type'	=>	array('all'),
-			'max' 		=>	'',
-			'taxonomy' 	=>	array('all'),
-			'filters'	=>	array('search'),
-			'result_elements' => array('post_title', 'post_type')
-=======
 			'post_type'			=>	array('all'),
 			'max' 				=>	'',
 			'taxonomy' 			=>	array('all'),
 			'filters'			=>	array('search'),
 			'result_elements' 	=>	array('post_title', 'post_type'),
 			'return_format'		=>	'object'
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		);
 		$this->l10n = array(
 			'max'		=> __("Maximum values reached ( {max} values )",'acf'),
@@ -46,13 +38,8 @@ class acf_field_relationship extends acf_field
 		
 		// do not delete!
     	parent::__construct();
-<<<<<<< HEAD
     	
     	
-=======
-    	
-    	
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
     	// extra
 		add_action('wp_ajax_acf/fields/relationship/query_posts', array($this, 'query_posts'));
 		add_action('wp_ajax_nopriv_acf/fields/relationship/query_posts', array($this, 'query_posts'));
@@ -158,11 +145,7 @@ class acf_field_relationship extends acf_field
 			'paged'						=>	1,
 			'orderby'					=>	'title',
 			'order'						=>	'ASC',
-<<<<<<< HEAD
-			'post_status'				=>	array('publish', 'private', 'draft', 'inherit', 'future'),
-=======
 			'post_status'				=>	'any',
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			'suppress_filters'			=>	false,
 			's'							=>	'',
 			'lang'						=>	false,
@@ -187,7 +170,10 @@ class acf_field_relationship extends acf_field
 		{
 			global $sitepress;
 			
-			$sitepress->switch_lang( $options['lang'] );
+			if( !empty($sitepress) )
+			{
+				$sitepress->switch_lang( $options['lang'] );
+			}
 		}
 		
 		
@@ -274,24 +260,15 @@ class acf_field_relationship extends acf_field
 		{
 			$field = apply_filters('acf/load_field', array(), $options['field_key'] );
 		}
-<<<<<<< HEAD
 		
 		
 		// get the post from which this field is rendered on
 		$the_post = get_post( $options['post_id'] );
 		
 		
-=======
-		
-		
-		// get the post from which this field is rendered on
-		$the_post = get_post( $options['post_id'] );
-		
-		
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// filters
 		$options = apply_filters('acf/fields/relationship/query', $options, $field, $the_post);
-		$options = apply_filters('acf/fields/relationship/query/name=' . $field['name'], $options, $field, $the_post );
+		$options = apply_filters('acf/fields/relationship/query/name=' . $field['_name'], $options, $field, $the_post );
 		$options = apply_filters('acf/fields/relationship/query/key=' . $field['key'], $options, $field, $the_post );
 		
 		
@@ -348,7 +325,7 @@ class acf_field_relationship extends acf_field
 			
 			// filters
 			$title = apply_filters('acf/fields/relationship/result', $title, $post, $field, $the_post);
-			$title = apply_filters('acf/fields/relationship/result/name=' . $field['name'] , $title, $post, $field, $the_post);
+			$title = apply_filters('acf/fields/relationship/result/name=' . $field['_name'] , $title, $post, $field, $the_post);
 			$title = apply_filters('acf/fields/relationship/result/key=' . $field['key'], $title, $post, $field, $the_post);
 			
 			
@@ -417,13 +394,8 @@ class acf_field_relationship extends acf_field
 			'taxonomy' => implode(',', $field['taxonomy']),
 			'field_key' => $field['key']
 		);
-<<<<<<< HEAD
 		
 		
-=======
-		
-		
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		// Lang
 		if( defined('ICL_LANGUAGE_CODE') )
 		{
@@ -451,7 +423,6 @@ class acf_field_relationship extends acf_field
 		<table class="widefat">
 			<thead>
 				<?php if(in_array( 'search', $field['filters']) ): ?>
-<<<<<<< HEAD
 				<tr>
 					<th>
 						<input class="relationship_search" placeholder="<?php _e("Search...",'acf'); ?>" type="text" id="relationship_<?php echo $field['name']; ?>" />
@@ -496,52 +467,6 @@ class acf_field_relationship extends acf_field
 					</th>
 				</tr>
 				<?php endif; ?>
-=======
-				<tr>
-					<th>
-						<input class="relationship_search" placeholder="<?php _e("Search...",'acf'); ?>" type="text" id="relationship_<?php echo $field['name']; ?>" />
-					</th>
-				</tr>
-				<?php endif; ?>
-				<?php if(in_array( 'post_type', $field['filters']) ): ?>
-				<tr>
-					<th>
-						<?php 
-						
-						// vars
-						$choices = array(
-							'all' => __("Filter by post type",'acf')
-						);
-						
-						
-						if( in_array('all', $field['post_type']) )
-						{
-							$post_types = apply_filters( 'acf/get_post_types', array() );
-							$choices = array_merge( $choices, $post_types);
-						}
-						else
-						{
-							foreach( $field['post_type'] as $post_type )
-							{
-								$choices[ $post_type ] = $post_type;
-							}
-						}
-						
-						
-						// create field
-						do_action('acf/create_field', array(
-							'type'	=>	'select',
-							'name'	=>	'',
-							'class'	=>	'select-post_type',
-							'value'	=>	'',
-							'choices' => $choices,
-						));
-						
-						?>
-					</th>
-				</tr>
-				<?php endif; ?>
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 			</thead>
 		</table>
 		<ul class="bl relationship_list">
@@ -599,7 +524,7 @@ class acf_field_relationship extends acf_field
 				
 				// filters
 				$title = apply_filters('acf/fields/relationship/result', $title, $p, $field, $post);
-				$title = apply_filters('acf/fields/relationship/result/name=' . $field['name'] , $title, $p, $field, $post);
+				$title = apply_filters('acf/fields/relationship/result/name=' . $field['_name'] , $title, $p, $field, $post);
 				$title = apply_filters('acf/fields/relationship/result/key=' . $field['key'], $title, $p, $field, $post);
 				
 				
@@ -644,8 +569,6 @@ class acf_field_relationship extends acf_field
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-<<<<<<< HEAD
-=======
 		<label><?php _e("Return Format",'acf'); ?></label>
 		<p><?php _e("Specify the returned value on front end",'acf') ?></p>
 	</td>
@@ -666,7 +589,6 @@ class acf_field_relationship extends acf_field
 </tr>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		<label for=""><?php _e("Post Type",'acf'); ?></label>
 	</td>
 	<td>
@@ -792,36 +714,26 @@ class acf_field_relationship extends acf_field
 	
 	function format_value( $value, $post_id, $field )
 	{
-<<<<<<< HEAD
-=======
 		// empty?
-		if( !$value )
+		if( !empty($value) )
 		{
-			return $value;
+			// Pre 3.3.3, the value is a string coma seperated
+			if( is_string($value) )
+			{
+				$value = explode(',', $value);
+			}
+			
+			
+			// convert to integers
+			if( is_array($value) )
+			{
+				$value = array_map('intval', $value);
+				
+				// convert into post objects
+				$value = $this->get_posts( $value );
+			}
+			
 		}
-		
-		
-		// Pre 3.3.3, the value is a string coma seperated
-		if( is_string($value) )
-		{
-			$value = explode(',', $value);
-		}
-		
-		
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
-		// empty?
-		if( !is_array($value) || empty($value) )
-		{
-			return $value;
-		}
-		
-		
-		// convert to integers
-		$value = array_map('intval', $value);
-		
-		
-		// convert into post objects
-		$value = $this->get_posts( $value );
 		
 		
 		// return value
@@ -912,17 +824,10 @@ class acf_field_relationship extends acf_field
 		
 		// find posts (DISTINCT POSTS)
 		$posts = get_posts(array(
-<<<<<<< HEAD
-			'numberposts' => -1,
-			'post__in' => $value,
-			'post_type'	=>	apply_filters('acf/get_post_types', array()),
-			'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
-=======
 			'numberposts'	=>	-1,
 			'post__in'		=>	$post_ids,
 			'post_type'		=>	apply_filters('acf/get_post_types', array()),
 			'post_status'	=>	'any',
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 		));
 
 		
@@ -938,11 +843,7 @@ class acf_field_relationship extends acf_field
 		foreach( $post_ids as $k => $v)
 		{
 			// check that post exists (my have been trashed)
-			if( !isset($ordered_posts[ $v ]) )
-			{
-				unset( $value[ $k ] );
-			}
-			else
+			if( isset($ordered_posts[ $v ]) )
 			{
 				$r[] = $ordered_posts[ $v ];
 			}
@@ -955,31 +856,6 @@ class acf_field_relationship extends acf_field
 	
 	
 	/*
-<<<<<<< HEAD
-	*  format_value_for_api()
-	*
-	*  This filter is appied to the $value after it is loaded from the db and before it is passed back to the api functions such as the_field
-	*
-	*  @type	filter
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	$value	- the value which was loaded from the database
-	*  @param	$post_id - the $post_id from which the value was loaded
-	*  @param	$field	- the field array holding all the field options
-	*
-	*  @return	$value	- the modified value
-	*/
-	
-	function format_value_for_api( $value, $post_id, $field )
-	{
-		return $this->format_value( $value, $post_id, $field );
-	}
-	
-	
-	/*
-=======
->>>>>>> 7548e64a09c1839a373e5cb390b8f4f5790d2536
 	*  update_value()
 	*
 	*  This filter is appied to the $value before it is updated in the db
@@ -997,17 +873,43 @@ class acf_field_relationship extends acf_field
 	
 	function update_value( $value, $post_id, $field )
 	{
-		// array?
-		if( is_array($value) ){ foreach( $value as $k => $v ){
+		// validate
+		if( empty($value) )
+		{
+			return $value;
+		}
+		
+		
+		if( is_string($value) )
+		{
+			// string
+			$value = explode(',', $value);
 			
-			// object?
-			if( is_object($v) && isset($v->ID) )
-			{
-				$value[ $k ] = $v->ID;
+		}
+		elseif( is_object($value) && isset($value->ID) )
+		{
+			// object
+			$value = array( $value->ID );
+			
+		}
+		elseif( is_array($value) )
+		{
+			// array
+			foreach( $value as $k => $v ){
+			
+				// object?
+				if( is_object($v) && isset($v->ID) )
+				{
+					$value[ $k ] = $v->ID;
+				}
 			}
 			
-		}}
-				
+		}
+		
+		
+		// save value as strings, so we can clearly search for them in SQL LIKE statements
+		$value = array_map('strval', $value);
+						
 		
 		return $value;
 	}
